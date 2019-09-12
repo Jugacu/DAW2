@@ -20,4 +20,4 @@ echo "{$var1} % {$var2} son " . ($var1 % $var2) . " <br>";
 ?>
 <?php
 // Ejercicio 2
-phpinfo();
+phpinfo(INFO_MODULES);
