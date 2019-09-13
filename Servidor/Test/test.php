@@ -1,4 +1,5 @@
 <?php
+
     $var = 'Juan';
 
     function println($str): void
@@ -47,6 +48,27 @@
 
             $foo = isset($foo);
             println(var_dump($foo));
+
+
+            function duplicar($var) {
+                $temp = $var * 2;
+            }
+
+            $var = 5;
+            duplicar($var);
+
+            println("El valor de la variable \$temp es $temp");
+
+        function duplicar2($var) {
+            global $temp;
+            $temp = $var * 2;
+        }
+
+        $var = 5;
+        duplicar2($var);
+
+        println("El valor de la variable \$temp es $temp");
+
         ?>
     </body>
 </html>
