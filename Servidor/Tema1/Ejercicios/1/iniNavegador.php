@@ -8,7 +8,7 @@
 
         // Ejercicio 1
         echo "<br>----------1<br>";
-        echo "<b>Tu user-agent es</b>: " . $_SERVER ['HTTP_USER_AGENT'];
+        echo $_SERVER ['HTTP_USER_AGENT'];
 
         // Ejercicio 2
         echo "<br>----------2<br>";
@@ -186,6 +186,38 @@
         echo "[\$var4 !== \$var4] ". json_encode($var4 !== $var4). "<br>";
         echo "[\$var4 > \$var3] ". json_encode($var4 > $var3). "<br>";
         echo "[\$var4 < \$var2] ". json_encode($var4 < $var2). "<br>";
+
+        // Ejercicio 10
+        echo "<br>----------10<br>";
+        echo "[\$var1 == \$var2 && \$var1 === \$var3] ". json_encode($var1 == $var2 && $var1 === $var3). "<br>";
+        echo "[\$var1 !== \$var4 || \$var1 > \$var4] ". json_encode($var1 !== $var4 || $var1 > $var4). "<br>";
+        echo "[\$var1 < \$var2 && \$var1 === \$var3] ". json_encode($var1 < $var2 && $var1 === $var3). "<br>";
+
+        // Ejercicio 11
+        echo "<br>----------11<br>";
+        $var1 = 1000;
+        for($i = 1; $i < $var1; $i ++) {
+            if ($var1 % $i == 0) {
+                echo "[$i]<br>";
+            }
+        }
+
+        // Ejercicio 12
+        echo "<br>----------12<br>";
+        for ($i = 1; $i <= 10000; $i++){
+
+            $uwu = 0;
+
+            for($j = $i - 1; $j >= 1; $j--){
+                if($i % $j == 0){
+                    $uwu += $j;
+                }
+            }
+
+            if ($uwu == $i){
+                echo "[$i] <br>";
+            }
+        }
     ?>
 </body>
 </html>
