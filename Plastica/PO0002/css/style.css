@@ -1,0 +1,96 @@
+body {
+    font-family: 'trebuchet ms', arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#main {
+    width: 950px;
+    margin: 0 auto;
+}
+
+#header {
+    background: black;
+    margin-bottom: 20px;
+}
+
+#logo, #menubar {
+    width: 860px;
+    margin: 0 auto;
+    padding: 5px 10px;
+}
+
+#logo {
+    background: #1d1d1d;
+    height: 100px;
+}
+
+#logo_text a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+#logo_text h1, h2 {
+    margin: 0;
+}
+
+#logo_text h2 {
+    color: #95796e;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+#menubar {
+    background: #2d2d2d;
+    border-top: 1px solid #3d3d3d;
+}
+
+#menu {
+    text-align: right;
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+
+#menu li {
+    display:  inline-block;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: white;
+    background: #5e4237;
+    padding: 10px;
+}
+
+#menu li a:hover {
+    background: #b48a7c;
+    cursor: pointer;
+}
+
+#content_header{
+    margin: 0 auto;
+    width: 860px;
+    height: 180px;
+    border: 10px solid #dddddd;
+    background-image: url('../img/banner.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#site_content {
+    width: 860px;
+    margin: 0 auto;
+}
+
+#sidebar_container{
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #e6e6e6;
+    border-radius: 15px;
+    margin: 0;
+    display: inline-block;
+}
