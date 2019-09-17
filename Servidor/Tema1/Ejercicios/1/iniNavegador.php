@@ -1,6 +1,7 @@
 <html lang="es-ES">
     <head>
         <title>owo</title>
+        <meta charset="UTF-8">
     </head>
     <body>
         <?php
@@ -9,8 +10,8 @@
             echo "<b>Tu user-agent es</b>: " . $_SERVER ['HTTP_USER_AGENT'];
 
             // Ejercicio 2
-            // phpinfo();
-        
+            # phpinfo();
+
             // Ejercicio 3
             $var1 = 5;
             $var2 = 10;

@@ -67,7 +67,57 @@
         $var = 5;
         duplicar2($var);
 
-        println("El valor de la variable \$temp es $temp");
+        println("El valor de la variable \$temp es $temp <br>");
+
+
+        $array = array(
+                "foo" => "bar",
+                "bar" => "foo",
+                100 => -100,
+                -100 => 100,
+        );
+
+        var_dump($array);
+
+        $array = [
+                "foo",
+                "bar",
+                "hello",
+                "world"
+        ];
+
+        print '<br>';
+
+        var_dump($array);
+
+        $array = [
+            "foo",
+            "bar",
+            6 => "hello",
+            "world"
+        ];
+
+        print '<br>';
+
+        var_dump($array);
+
+
+        $array = [
+            "foo" => "bar",
+            42 => 24,
+            "multi" => array(
+                    "dimensional" => [
+                            "array" => "foo"
+                    ]
+            )
+        ];
+
+        print '<br>';
+        var_dump($array['foo']);
+        print '<br>';
+        var_dump($array[42]);
+        print '<br>';
+        var_dump($array['multi']['dimensional']['array']);
 
         ?>
     </body>
