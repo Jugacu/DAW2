@@ -24,7 +24,7 @@ li:empty {
 }
 
 #logo, #menubar {
-    width: 860px;
+    width: 840px;
     margin: 0 auto;
     padding: 5px 10px;
 }
@@ -80,6 +80,7 @@ li:empty {
 }
 
 #content_header {
+    box-sizing: border-box;
     margin: 0 auto 20px auto;
     width: 860px;
     height: 180px;
