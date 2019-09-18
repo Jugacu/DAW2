@@ -84,19 +84,17 @@ li:empty {
     width: 860px;
     height: 180px;
     border: 10px solid #dddddd;
-    background-image: url('../img/banner.jpg');
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: #ddd url('../img/banner.jpg') no-repeat center center;
 }
 
 #site_content {
+    display: flex;
     width: 860px;
     margin: 0 auto;
 }
 
 #sidebar_container {
-    display: inline-block;
     width: 200px;
     margin: 0;
 }
@@ -137,9 +135,6 @@ li:empty {
 
 #content {
     margin-left: 25px;
-    vertical-align: top;
-    width: calc(100% - 205px - 25px);
-    display: inline-block;
 }
 
 #content ul {
