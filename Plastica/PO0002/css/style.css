@@ -13,7 +13,6 @@ li:empty {
 }
 
 #main {
-    width: 950px;
     margin: 0 auto;
 }
 
@@ -30,7 +29,7 @@ li:empty {
 
 #logo {
     background: #1d1d1d;
-    height: 100px;
+    height: 120px;
 }
 
 #logo_text a {
@@ -41,13 +40,14 @@ li:empty {
 }
 
 #logo_text h1, h2 {
-    margin: 0;
+    margin: 20px 0 0 0;
 }
 
 #logo_text h2 {
-    color: #95796e;
+    color: #B48A7C;
     font-size: 1em;
     font-weight: 400;
+    margin: 4px 0 0 0;
 }
 
 #menubar {
@@ -63,6 +63,7 @@ li:empty {
 }
 
 #menu li {
+    margin-left: 15px;
     display: inline-block;
 }
 
@@ -73,8 +74,8 @@ li:empty {
     padding: 10px;
 }
 
-#menu li a:hover {
-    background: #b48a7c;
+#menu li a:hover, .selected a{
+    background: #b48a7c !important;
     cursor: pointer;
 }
 
