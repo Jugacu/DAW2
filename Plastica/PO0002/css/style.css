@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+h1, h2, h3 {
+    font-family: 'century gothic', arial, sans-serif;
+}
+
 li {
     list-style-image: url('../img/bullet.png');
 }
@@ -10,6 +14,10 @@ li {
 li:empty {
     visibility: hidden;
     height: 5px;
+}
+
+p {
+    line-height: 1.6em;
 }
 
 #main {
@@ -71,7 +79,7 @@ li:empty {
     text-decoration: none;
     color: white;
     background: #5e4237;
-    padding: 10px;
+    padding: 5px 20px 7px 20px;
 }
 
 #menu li a:hover, .selected a{
