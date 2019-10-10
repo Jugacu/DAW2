@@ -1,0 +1,2 @@
+19.	TypesConfig
+20.	DefaultType
