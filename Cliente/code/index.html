@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="clickme">click me</div>
+<script>
+    let win;
+    document.querySelector('#clickme').addEventListener('click', () => {
+        if (win === undefined) {
+            win = open('https://jugacu.es');
+        } else {
+            win.close();
+            win = undefined;
+        }
+    })
+</script>
+</body>
+</html>
