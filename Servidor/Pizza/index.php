@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         input {
             padding: 5px;
-            border: 1px solid #9a9a9a;
+            border: 1px solid #c1c1c1;
             margin-bottom: 20px;
         }
 
@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
 
         select, input[type= number] {
-            border: 1px solid #9a9a9a;
+            border: 1px solid #c1c1c1;
             padding: 5px;
         }
 
