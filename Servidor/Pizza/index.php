@@ -14,9 +14,24 @@ function validatePost(): Array
         }
     }
 
-    if (isset($_POST['tlf']) && !empty($_POST['tlf'] && !is_numeric($_POST['tlf']))) {
+    if (isset($_POST['tlf']) && !empty($_POST['tlf'] &&
+            !is_numeric($_POST['tlf'])
+            || strlen($_POST['tlf']) < 9
+            || strlen($_POST['tlf']) > 9
+            || (substr( $_POST['tlf'], 0, 1) !== '6' && substr( $_POST['tlf'], 0, 1) !== '7')
+            )
+    ) {
         if (!in_array('tlf', $errors)) {
             array_push($errors, 'tlf');
+        }
+    }
+
+    if (isset($_POST['mail']) && !empty($_POST['mail']) && (
+            !filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)
+        )
+    ) {
+        if (!in_array('mail', $errors)) {
+            array_push($errors, 'mail');
         }
     }
 
@@ -49,32 +64,32 @@ function resetSession(): void
 const pizzaPrices = [
     'margarita' => [
         'normal' => 4,
-        'big' => 5,
+        'grande' => 5,
         'familiar' => 10
     ],
     'barbacoa' => [
         'normal' => 4,
-        'big' => 7,
+        'grande' => 7,
         'familiar' => 15
     ],
     '4quesos' => [
         'normal' => 3,
-        'big' => 5,
+        'grande' => 5,
         'familiar' => 10
     ],
     'carbonara' => [
         'normal' => 3,
-        'big' => 6,
+        'grande' => 6,
         'familiar' => 12
     ]
 ];
 
 const extraPrices = [
-    'cheese' => 2,
-    'pepper' => 1,
-    'onion' => 6,
-    'ham' => 4,
-    'boneless-chicken' => 99,
+    'queso' => 2,
+    'pimiento' => 1,
+    'cebolla' => 6,
+    'jamon' => 4,
+    'pollo' => 99,
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -302,8 +317,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                                     value="normal">Normal
                             </option>
                             <option
-                                <?= ($_SESSION['pizzas'][$i]['type'] === 'big') ? 'selected' : '' ?>
-                                    value="big">Grande
+                                <?= ($_SESSION['pizzas'][$i]['type'] === 'grande') ? 'selected' : '' ?>
+                                    value="grande">Grande
                             </option>
                             <option
                                 <?= ($_SESSION['pizzas'][$i]['type'] === 'familiar') ? 'selected' : '' ?>
@@ -313,8 +328,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <label for="pizza-<?= $i ?>-dough">Masa<span>*</span></label>
                         <select required size="3" name="pizzas[<?= $i ?>][dough]" id="pizza-<?= $i ?>-dough">
                             <option
-                                <?= ($_SESSION['pizzas'][$i]['dough'] === 'fine') ? 'selected' : '' ?>
-                                    value="fine">Fina
+                                <?= ($_SESSION['pizzas'][$i]['dough'] === 'fina') ? 'selected' : '' ?>
+                                    value="fina">Fina
                             </option>
                             <option
                                 <?= ($_SESSION['pizzas'][$i]['dough'] === 'normal') ? 'selected' : '' ?>
@@ -325,24 +340,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         <select size="5" name="pizzas[<?= $i ?>][complements][]" id="pizza-<?= $i ?>-complements"
                                 multiple>
                             <option
-                                <?= (in_array('cheese', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
-                                    value="cheese">+ Queso
+                                <?= (in_array('queso', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
+                                    value="queso">+ Queso
                             </option>
                             <option
-                                <?= (in_array('pepper', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
-                                    value="pepper">Pimiento
+                                <?= (in_array('pimiento', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
+                                    value="pimiento">Pimiento
                             </option>
                             <option
-                                <?= (in_array('onion', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
-                                    value="onion">Cebolla
+                                <?= (in_array('cebolla', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
+                                    value="cebolla">Cebolla
                             </option>
                             <option
-                                <?= (in_array('ham', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
-                                    value="ham">Jamón
+                                <?= (in_array('jamon', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
+                                    value="jamon">Jamón
                             </option>
                             <option
-                                <?= (in_array('boneless-chicken', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
-                                    value="boneless-chicken">Pollo
+                                <?= (in_array('pollo', $_SESSION['pizzas'][$i]['complements'])) ? 'selected' : '' ?>
+                                    value="pollo">Pollo
                             </option>
                         </select>
                         <label for="pizza-<?= $i ?>-amount">Cantidad<span>*</span></label>
