@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JUAN</title>
+</head>
+<body>
+<h3>Ejemplo de ventana nueva</h3>
+<p>
+    <span id="url">{{url}}</span>
+    <span id="protocol">{{protocol}}</span>
+    <span id="navigator">{{navigator}}</span>
+    <span id="java">{{java}}</span>
+    <span id="iframe">{{iframe}}</span>
+</p>
+<script>
+    window.addEventListener('load', () => {
+        document.querySelector('#url').innerHTML = `<strong>url:</strong> ${document.location} <br>`;
+        document.querySelector('#protocol').innerHTML = `<strong>protocol:</strong> ${document.location.protocol} <br>`;
+        document.querySelector('#navigator').innerHTML = `<strong>navigator:</strong> ${navigator.userAgent} <br>`;
+        document.querySelector('#java').innerHTML = `<strong>java:</strong> ${navigator.javaEnabled() ? 'SI' : 'NO'} está disponible<br>`;
+        document.querySelector('#iframe').innerHTML = `<iframe src="https://jugacu.es" width="580" height="800" frameborder="0"></iframe>`;
+    })
+</script>
+</body>
+</html>

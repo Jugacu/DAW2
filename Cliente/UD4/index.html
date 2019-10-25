@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UD4</title>
+    <style>
+        #window {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<span id="window">click me</span>
+
+<script>
+    document.querySelector('#window').addEventListener('click', () => {
+        let windowz = open('./popup.html', undefined, 'height=800,width=600');
+    });
+    window.addEventListener('load', () => {
+        const div = document.createElement('div');
+        document.body.append(div);
+
+        let name = prompt('Nombre');
+        let date = prompt('Fecha de nacimiento');
+
+        const age = calculateAge(stringToDate(date, 'dd/mm/yyyy', '/'));
+
+        div.innerHTML = `
+            <h1>TAREA DE JAVASCRIPT UD 04</h1>
+            Buenas tardes <strong>${name}</strong>. <br>
+            Tu nombre tiene <strong>${name.length}</strong> caracteres, incluidos espacios. <br>
+            La primera posicion de tu letra 'a' está en la posicion <strong>${name.indexOf('a')}</strong> <br>
+            La útilma posicion de tu letra 'a' está en la posicion <strong>${name.lastIndexOf('a')}</strong> <br>
+            Tu nombre menos las 3 primeras letras es <strong>${name.slice(3)}</strong> <br>
+            Tu nombre en todo mayusculas es <strong>${name.toUpperCase()}</strong> <br>
+            Tu edad es <strong>${age}</strong> <br>
+            Naciste un feliz <strong>${getSeason(stringToDate(date, 'dd/mm/yyyy', '/'))}</strong> del año <strong>${stringToDate(date, 'dd/mm/yyyy', '/').getFullYear()}</strong> <br>
+            El coseno de 180 es <strong>${Math.cos(180)}</strong> <br>
+            El número menor de (34,67,23,75,35,19) es: <strong>19</strong> <br>
+            Ejemplo de número al azar: <strong>${Math.random()}</strong>
+        `
+    });
+
+
+    const stringToDate = (_date, _format, _delimiter) => {
+        const formatLowerCase = _format.toLowerCase();
+        const formatItems = formatLowerCase.split(_delimiter);
+        const dateItems = _date.split(_delimiter);
+        const monthIndex = formatItems.indexOf("mm");
+        const dayIndex = formatItems.indexOf("dd");
+        const yearIndex = formatItems.indexOf("yyyy");
+        let month = parseInt(dateItems[monthIndex]);
+        month -= 1;
+        const formatedDate = new Date(dateItems[yearIndex], month, dateItems[dayIndex]);
+        return formatedDate;
+    };
+
+    const calculateAge = (birthday) => {
+        const ageDifMs = Date.now() - birthday.getTime();
+        const ageDate = new Date(ageDifMs);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    };
+
+
+    const getSeason = (date) => {
+        let month = date.getMonth() + 1;
+        let season = '';
+        switch (month) {
+            case 12:
+            case 1:
+            case 2:
+                season = 'invierno';
+                break;
+            case 3:
+            case 4:
+            case 5:
+                season = 'primavera';
+                break;
+            case 6:
+            case 7:
+            case 8:
+                season = 'verano';
+                break;
+            case 9:
+            case 10:
+            case 11:
+                season = 'otoño';
+                break;
+        }
+        console.log(season);
+        return season;
+    }
+</script>
+</body>
+</html>
