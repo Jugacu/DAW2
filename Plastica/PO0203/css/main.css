@@ -39,6 +39,7 @@ textarea {
     height: auto;
     overflow: hidden;
     font-size: 1.1em;
+    text-align: justify;
 }
 
 #inner-left > #languages, #inner-left > #contact {
