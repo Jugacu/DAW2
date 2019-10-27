@@ -43,4 +43,43 @@ window.addEventListener('load', () => {
 
         field.style.height = height + 'px';
     }
+
+    const sliders = document.querySelectorAll('.progress');
+
+    sliders.forEach((el) => {
+        el.children[0].style.width = `${Math.floor(Math.random() * 100) + 1}%`;
+        rangeSlider(el, (val) => {
+            el.children[0].style.width = `${val}%`
+        });
+    });
+
+    function rangeSlider(el, onDrag) {
+
+        let down = false;
+        let rangeWidth;
+        let rangeLeft;
+
+        el.addEventListener("mousedown", function (e) {
+            rangeWidth = this.offsetWidth;
+            rangeLeft = this.offsetLeft;
+            down = true;
+            updateDragger(e);
+            return false;
+        });
+
+        document.addEventListener("mousemove", function (e) {
+            updateDragger(e);
+        });
+
+        document.addEventListener("mouseup", function () {
+            down = false;
+        });
+
+        function updateDragger(e) {
+            if (down && e.pageX >= rangeLeft && e.pageX <= (rangeLeft + rangeWidth)) {
+                if (typeof onDrag == "function") onDrag(Math.round(((e.pageX - rangeLeft) / rangeWidth) * 100));
+            }
+        }
+
+    }
 });
