@@ -212,7 +212,6 @@ button[type=submit]:hover {
     display: block;
     font-size: 1.1em;
     margin: 20px 0;
-    font-weight: bold;
     text-transform: uppercase;
 }
 
