@@ -170,7 +170,7 @@ h3::after {
 
 #user-data .h2, #user-data .h1 {
     padding-left: 50px;
-    width:  calc(100% - 50px);
+    width:  calc(100% - 100px);
 }
 
 #user-data .h2 {
