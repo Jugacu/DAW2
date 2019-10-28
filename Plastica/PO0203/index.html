@@ -12,13 +12,22 @@
             <div id="avatar">
                 <div id="user-data">
                     <input autocomplete="off" name="nombre" required class="h1" type="text" placeholder="Nombre">
-                    <input autocomplete="off" name="especializacion" required class="h2" type="text" placeholder="Especialización">
+                    <input autocomplete="off" name="especializacion" required class="h2" type="text"
+                           placeholder="Especialización">
                 </div>
                 <input name="img" required id="uploader" type="file" accept="image/png, image/jpeg">
             </div>
             <div id="inner-left">
                 <div id="education">
                     <h3>Educación</h3>
+                    <div>
+                        <div>
+                            <span>De</span> <input type="month" name="start">
+                        </div>
+                        <div>
+                            <span>A</span><input type="month" name="end">
+                        </div>
+                    </div>
                     <textarea name="educacion" required placeholder="Escribe..."></textarea>
                 </div>
                 <div id="languages">

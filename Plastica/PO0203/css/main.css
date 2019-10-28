@@ -168,6 +168,25 @@ h3::after {
     width: 100%;
 }
 
+#education input {
+    border: 0;
+    background: #dbdbdb;
+    padding: 5px;
+    outline: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#education > div > div  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#education > div {
+    margin-bottom: 15px;
+}
+
 #user-data .h2, #user-data .h1 {
     padding-left: 50px;
     width:  calc(100% - 100px);
