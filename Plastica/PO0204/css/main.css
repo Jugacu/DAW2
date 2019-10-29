@@ -15,6 +15,7 @@ main {
 
 progress {
     width: 320px;
+    cursor: pointer;
 }
 
 button, input {

@@ -34,6 +34,40 @@
 
         volume.addEventListener('change', () => {
             video.volume = volume.value / 100;
-        })
+        });
+
+        rangeSlider(progress, (val) => {
+            video.currentTime = Math.floor(val) * video.duration / 100
+        });
+
+        function rangeSlider(el, onDrag) {
+
+            let down = false;
+            let rangeWidth;
+            let rangeLeft;
+
+            el.addEventListener("mousedown", function (e) {
+                rangeWidth = this.offsetWidth;
+                rangeLeft = this.offsetLeft;
+                down = true;
+                updateDragger(e);
+                return false;
+            });
+
+            document.addEventListener("mousemove", function (e) {
+                updateDragger(e);
+            });
+
+            document.addEventListener("mouseup", function () {
+                down = false;
+            });
+
+            function updateDragger(e) {
+                if (down && e.pageX >= rangeLeft && e.pageX <= (rangeLeft + rangeWidth)) {
+                    if (typeof onDrag == "function") onDrag(Math.round(((e.pageX - rangeLeft) / rangeWidth) * 100));
+                }
+            }
+
+        }
     }
 )();
