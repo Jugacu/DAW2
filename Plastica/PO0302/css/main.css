@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display&display=swap');
+
+* {
+    font-family: 'Sedgwick Ave Display', cursive;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    margin: 0;
+}
+
+#wrapper {
+    position: absolute;
+    width: 1200px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gradient {
+    background-image: radial-gradient(#fff 80%, #858585);
+}
+
+#black {
+    background: rgba(0, 0, 0, .7);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    background: #1d1d1d;
+    z-index: 500;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+#left, #right {
+    background-image: url("../img/portada1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 600px;
+}
+
+#right {
+    background-image: url("../img/portada2.jpg");
+}
+
+#enter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffa10f;
+    color: black;
+    padding: 10px 20px;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+#grid {
+    max-width: 1308px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-areas: "header header" "left right" "left1 right" "left2 right";
+    grid-template-columns: 682px 558px;
+    grid-template-rows: 247px repeat(3, 348px);
+    row-gap: 40px;
+    column-gap: 40px;
+    height: 1500px;
+    justify-content: center;
+}
+
+#grid .header {
+    grid-area: header;
+    background-image: url("../img/cabecera.png");
+    background-size: cover;
+}
+
+#grid .right {
+    grid-area: right;
+    background-image: url("../img/dcha.jpg");
+}
+
+#grid .left {
+    grid-area: left;
+    background-image: url("../img/izqda1.png");
+    background-size: cover;
+}
+
+#grid .left:nth-child(2) {
+    grid-area: left1;
+    background-image: url("../img/izqda2.png");
+}
+
+#grid .left:nth-child(3) {
+    grid-area: left2;
+    background-image: url("../img/izqda3.png");
+}
+
+.drop-shadow {
+    position: relative;
+}
+
+.drop-shadow::before, .drop-shadow::after {
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    height: 20%;
+    max-width: 300px;
+    max-height: 100px;
+    box-shadow: 0 22px 1px rgba(0, 0, 0, 0.7);
+    transform: rotate(-3deg);
+}
+
+.drop-shadow::before, .drop-shadow::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+}
+
+.drop-shadow::after {
+    right: 10px;
+    left: auto;
+    transform: rotate(3deg);
+}
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    width: 13px;
+    background: #fff;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+    left: 6px;
+    animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+    left: 26px;
+    animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+    left: 45px;
+    animation-delay: 0;
+}
+@keyframes lds-facebook {
+    0% {
+        top: 6px;
+        height: 51px;
+    }
+    50%, 100% {
+        top: 19px;
+        height: 26px;
+    }
+}

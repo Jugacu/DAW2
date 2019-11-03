@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spoookyyy</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="no-overflow">
+<div id="loading">
+    <div class="lds-facebook">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<main>
+    <div id="black"></div>
+    <video src="./video/sadness.webm" id="bg" autoplay loop></video>
+    <div id="wrapper">
+        <div class="flex">
+            <div id="left"></div>
+            <div id="right"></div>
+        </div>
+        <a href="spooky.html">
+            <div id="enter">
+                Entrar
+            </div>
+        </a>
+    </div>
+</main>
+<script>
+    const video = document.querySelector('#bg');
+
+    const hideLoading = (timeout = 300) => {
+        setTimeout(() => {
+            document.querySelector('#loading').style.display = 'none';
+        }, timeout)
+    };
+
+    // Listener
+    video.addEventListener('canplaythrough', () => {
+        hideLoading(500);
+    });
+
+    // Cached video
+    if (video.readyState > 3) {
+        hideLoading(500);
+    }
+</script>
+</body>
+</html>
