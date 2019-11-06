@@ -1,0 +1,274 @@
+/* Created by http://freehtml5templates.com */
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* render html5 elements as block */
+header, footer, section, aside, nav, article {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background: #000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #666;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/* layout */
+
+#wrapper {
+    width: 940px;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    -webkit-box-shadow: 3px 3px 7px #777;
+    -moz-box-shadow: 3px 3px 7px #777;
+    border-radius: 30px;
+}
+
+nav {
+    width: 940px;
+    padding: 5px 0;
+    margin: 0 auto;
+    background: #333;
+    display: flex;
+    align-items: center;
+}
+
+header {
+    width: 940px;
+    height: 200px;
+    margin: 0 auto;
+    background: #fff url(images/butterflybrilliance.png) no-repeat left top;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+#main {
+    width: 920px;
+    margin: 0 auto;
+    padding: 30px 10px;
+    background: #FFF;
+    overflow: hidden;
+}
+
+#content {
+    float: right;
+    width: 620px;
+    margin-right: 30px;
+    border: 3px solid #085e9b;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+#sidebar {
+    float: left;
+    padding-left: 10px;
+    width: 200px;
+    border: 3px dashed #085e9b;
+    border-radius: 20px;
+}
+
+footer {
+    width: 940px;
+    margin: 0 auto;
+    clear: both;
+}
+
+/* basics */
+
+@font-face {
+    font-family: 'BlackRoseRegular';
+    src: url('BLACKR-webfont.eot');
+    src: url('BLACKR-webfont.eot?iefix') format('eot'),
+    url('BLACKR-webfont.woff') format('woff'),
+    url('BLACKR-webfont.ttf') format('truetype'),
+    url('BLACKR-webfont.svg#webfont21KuPMyg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    clear: both;
+    color: #333;
+}
+
+a:link, a:visited {
+    color: #085E9B;
+}
+
+a:hover, a:active {
+    color: #333;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+li {
+    padding-left: 5px;
+}
+
+/* nav */
+
+nav .menu {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+nav .menu ul {
+    margin: 0;
+    list-style: none;
+    line-height: normal;
+}
+
+nav .menu li {
+    display: block;
+    float: left;
+    border: 1px solid #08B8F9;
+    border-radius: 20px;
+    padding: 10px 0;
+}
+
+nav .menu a {
+    display: block;
+    float: left;
+    margin-right: 5px;
+    padding: 0px 15px;
+    text-decoration: none;
+    color: #08B8F9;
+}
+
+nav .menu a:hover {
+    text-decoration: underline;
+}
+
+/** HEADER */
+
+header h1, header h2 {
+    margin: 0;
+    padding: 0 0 0 30px;
+    line-height: normal;
+}
+
+header h1 {
+    float: left;
+    padding-top: 20px;
+    font-family: BlackRoseRegular, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    font-weight: normal;
+}
+
+header h1 a:link, header h1 a:visited {
+    text-decoration: none;
+    text-shadow: 0px 2px 3px #fff;
+    color: #08B8F9;
+}
+
+header h2 {
+    padding: 20px 0 0 30px;
+    font-style: italic;
+    font-size: 14px;
+    color: #ddd;
+}
+
+/** ARTICLES **/
+article img {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    border: none;
+    -webkit-box-shadow: 3px 3px 7px #777;
+    -moz-box-shadow: 3px 3px 7px #777;
+}
+
+#content p, ul, ol, hr {
+    margin-bottom: 24px;
+}
+
+#content ul ul, ol ol, ul ol, ol ul {
+    margin-bottom: 0;
+}
+
+#content h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    margin: 10px 0 20px;
+    line-height: 1.5em;
+}
+
+
+.alignleft, img.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 10px;
+}
+
+.alignright, img.alignright {
+    display: inline;
+    float: right;
+    margin-left: 10px;
+}
+
+.aligncenter, img.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* sidebar and footer widget blocks */
+
+#sidebar img {
+    border: 3px solid #085e9b;
+    margin-left: 10px;
+}
+
+aside h3 {
+    font-size: 18px;
+}
+
+aside ul {
+    list-style: none;
+    margin-bottom: 20px;
+    margin-top: -15px;
+}
+
+#footer-area {
+    color: #FFF;
+    font-size: 90%;
+    padding: 18px 0;
+    overflow: hidden;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background: linear-gradient(black 20%, #333);
+}
+
+.footer-segment {
+    float: left;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 190px;
+}
+
+footer aside h4 {
+    color: #ddd;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+footer a:link, footer a:visited {
+    color: #08B8F9;
+}
+
+footer p {
+    margin-top: -15px;
+}
+
