@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px 15px;
+    text-align: center;
+}
+
+th[scope=col] {
+    background: #e7e7e7;
+}
+
+tr:nth-child(even) {
+    background: #f8ffca;
+}
+
+tr:hover {
+    background: #FFFF66;
+    cursor: pointer;
+}
+
+tr > th[scope=row] {
+    background-color: #dff7fd;
+    text-align: left;
+    padding: 0 10px 0 20px;
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+table tr:nth-child(2) > th[scope=row] {
+    background-image: url("../img/euro.png");
+}
+
+table tr:nth-child(3) > th[scope=row] {
+    background-image: url("../img/dolar.png");
+}
+
+table tr:nth-child(4) > th[scope=row] {
+    background-image: url("../img/libra.png");
+}
+
+table tr:nth-child(5) > th[scope=row] {
+    background-image: url("../img/yen.png");
+}
