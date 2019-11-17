@@ -37,8 +37,8 @@
             Tu edad es <strong>${age}</strong> <br>
             Naciste un feliz <strong>${getSeason(stringToDate(date, 'dd/mm/yyyy', '/'))}</strong> del año <strong>${stringToDate(date, 'dd/mm/yyyy', '/').getFullYear()}</strong> <br>
             El coseno de 180 es <strong>${Math.cos(180)}</strong> <br>
-            El número menor de (34,67,23,75,35,19) es: <strong>19</strong> <br>
-            Ejemplo de número al azar: <strong>${Math.random()}</strong>
+            El número menor de (34,67,23,75,35,19) es: <strong>${Math.min(34,67,23,75,35,19)}</strong> <br>
+            Ejemplo de número al azar: <strong>${Math.floor(Math.random() * 100}</strong>
         `
     });
 
