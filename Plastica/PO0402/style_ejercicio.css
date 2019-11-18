@@ -1,0 +1,125 @@
+div {
+    border: 1px solid black;
+}
+
+#mesa {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-image: url('img/mesa.jpg');
+}
+
+.mantelito {
+    width: 250px;
+    height: 150px;
+    position: absolute;
+}
+
+.mantelito.mantelito1 {
+    background-color: green;
+    top: 10px;
+    left: 10px;
+}
+
+.mantelito.mantelito2 {
+    background-color: red;
+    top: 20px;
+    left: 20px;
+}
+
+.mantelito.mantelito3 {
+    background-color: yellow;
+    top: 30px;
+    left: 30px;
+}
+
+.mantelito.mantelito4 {
+    background-color: #639df9;
+    top: 40px;
+    left: 40px;
+}
+
+.cubiertos {
+    height: 75px;
+    width: auto;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.plato {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.vaso {
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 50%;
+    background-color: #33ccff;
+    border: 0px;
+}
+
+
+#mesa:hover {
+    background: url("img/mantel.png");
+}
+
+#mesa:hover .mantelito .plato {
+    transform: translate(65px, 5px);
+    -webkit-transform: translate(65px, 5px);
+    -moz-transform: translate(65px, 5px);
+    -o-transform: translate(65px, 5px);
+}
+
+#mesa {
+	transition: ease-in-out .1s;
+}
+
+.mantelito {
+    transition: ease-in-out .2s;
+}
+
+#mesa:hover .cubiertos {
+	transform: translate(17px, 35px);
+}
+
+#mesa:hover .mantelito1 {
+    transform: rotate(180deg);
+    left: 29%;
+}
+
+#mesa:hover .mantelito2 {
+    transform: rotate(-90deg);
+    top: 36.5%;
+    left: initial;
+    right: -20px;
+}
+
+#mesa:hover .mantelito3 {
+    top: initial;
+    bottom: 20px;
+    left: 29%;
+}
+
+#mesa:hover .mantelito4 {
+    transform: rotate(90deg);
+    top: 36.5%;
+    left: -20px;
+}
+
+#mesa:hover .vaso {
+    width: 15px;
+    right: 25px;
+    top: 25px;
+    left: initial;
+    transform: scale(2);
+}
