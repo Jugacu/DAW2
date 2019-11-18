@@ -1,0 +1,37 @@
+body {
+    background: url("../img/fondo.jpg");
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ff6600;
+    font-size: 2.5em;
+    text-shadow: 3px 3px 6px white ;
+}
+
+header, nav, section, aside, footer {
+    background: #1e6381;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+.row {
+    padding: 0 20px;
+    height: 300px;
+}
+
+.dentro {
+    padding: 0 5px;
+    display: grid;
+    height: 100%;
+}
+
+article {
+    background: #011e30;
+    border-radius: 10px;
+    height: calc(100% - 40px);
+}
