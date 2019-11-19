@@ -131,6 +131,8 @@ main {
     position: relative;
     min-width: calc(100% / 2);
     background: #252525;
+    padding: 50px 20px 20px 20px;
+    box-sizing: border-box;
 }
 
 .form h2 {

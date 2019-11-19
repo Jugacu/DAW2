@@ -1,0 +1,52 @@
+#loading_image {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    animation: rotating 2s linear infinite;
+}
+
+#contenedor {
+    height: 40px;
+    width: 80%;
+    margin: 100px auto;
+    border: 1px solid black;
+}
+
+#progreso {
+    height: 40px;
+    animation: bar 10s linear infinite;
+}
+
+@keyframes bar {
+    0% {
+        background: blue;
+        width: 0;
+    }
+    20% {
+        background: blue;
+        width: 75%;
+    }
+    40% {
+        background: orange;
+        width: 80%;
+    }
+    60% {
+        background: red;
+        width: 5%;
+    }
+    100% {
+        background: green;
+        width: 100%;
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
