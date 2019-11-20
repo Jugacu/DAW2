@@ -134,6 +134,10 @@ main {
     color: white;
 }
 
+.aside .form {
+    padding: 40px;
+}
+
 .aside h2 {
     text-align: center;
     margin-top: 0;
@@ -141,7 +145,6 @@ main {
 
 .aside > div {
     height: 50%;
-    padding: 40px;
 }
 
 .aside > div.video {
@@ -150,5 +153,5 @@ main {
 
 .aside > div.video >  iframe {
     width: 100%;
-    height: 350px;
+    height: 100%;
 }
