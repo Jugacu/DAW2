@@ -6,6 +6,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 a {
@@ -29,6 +30,7 @@ header {
     width: 150px;
     min-width: 150px;
     z-index: 2;
+    position: relative;
 }
 
 header .title {
@@ -281,8 +283,9 @@ footer {
     }
 
     header .menu-icon {
-        top: initial;
+        top: 40%;
         right: 50px;
+        height: 20px;
     }
 
     main {
