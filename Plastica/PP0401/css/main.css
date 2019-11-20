@@ -8,7 +8,15 @@ body {
     margin: 0;
 }
 
-.wrapper {
+a {
+    color: teal;
+}
+
+.flex {
+    display: flex;
+}
+
+body > .wrapper {
     display: flex;
 }
 
@@ -20,6 +28,7 @@ header {
     justify-content: center;
     width: 150px;
     min-width: 150px;
+    z-index: 2;
 }
 
 header .title {
@@ -45,6 +54,62 @@ header .title:hover .name {
     backface-visibility: hidden;
     transform: translateZ(0) scale(1.0, 1.0);
     width: 70px;
+}
+
+header .menu-icon {
+    position: absolute;
+    top: 50px;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+}
+
+.menu {
+    background: #252525;
+    transition: margin-left .2s ease-in-out;
+    margin-left: -300px;
+    min-width: 300px;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul > li {
+    text-align: center;
+    padding: 20px 0;
+    cursor: pointer;
+    color: white;
+    background: #171717;
+    outline: none;
+    position: relative;
+}
+
+.menu ul > li > ul > li {
+    background: #3c3c3c;
+}
+
+.menu ul > li > ul {
+    display: none;
+    transition: all .2s ease-in-out;
+    margin-bottom: -20px;
+    margin-top: 20px;
+}
+
+.menu ul > li:hover ul, .menu ul > li > ul:hover{
+    display: block;
+    position: absolute;
+    right: -300px;
+    top: -20px;
+    z-index: 999;
+    list-style: none;
+    width: 300px;
+}
+
+.menu ul li:hover{
+    background: #777;
 }
 
 main {
@@ -109,6 +174,7 @@ main {
     padding: 50px 30px;
     text-align: justify;
     cursor: default;
+    font-size: 1.1em;
 }
 
 .project:hover .desc {
@@ -136,6 +202,39 @@ main {
 
 .aside .form {
     padding: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.aside .form .flex{
+    justify-content: space-between;
+}
+.aside .form .flex input:not(:last-child){
+    margin: 0 10px 10px 0;
+}
+
+.aside .form .wrapper h2{
+    text-align: left;
+}
+
+.aside .form form input, .aside .form form textarea, .aside .form form button{
+    display: block;
+    border: 0;
+    padding: 10px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 10px 0;
+    resize: vertical;
+    font-size: 1em;
+    outline-color: teal;
+}
+
+.aside .form form textarea {
+    height: 120px;
+}
+
+button {
+    cursor: pointer;
 }
 
 .aside h2 {
@@ -151,7 +250,28 @@ main {
     background: #101010;
 }
 
-.aside > div.video >  iframe {
+.aside > div.video > iframe {
     width: 100%;
     height: 100%;
+}
+
+footer {
+    background: #0e0e0e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 0;
+    background: black;
+}
+
+::-webkit-scrollbar-track {
+    background: #ccc;
+    border: 0;
 }
