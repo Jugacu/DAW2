@@ -19,4 +19,3 @@
  <?php $contenido = ob_get_clean() ?>
 
  <?php include 'base.php' ?>
-4
