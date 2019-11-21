@@ -229,7 +229,7 @@ main {
     width: 100%;
     box-sizing: border-box;
     margin: 0 0 10px 0;
-    resize: vertical;
+    resize: none;
     font-size: 1em;
     outline-color: teal;
 }
