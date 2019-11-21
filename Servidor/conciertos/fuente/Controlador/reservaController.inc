@@ -1,35 +1,31 @@
 <?php
 class ReservaController
 {
-    public function reservar(array $act){
+    public function reservar(array $act)
+    {
         //print_r($idAct);
-        $exito=false;
         if (isset($_POST['enterado'])) {
             header("location: index.php");
-          }
-        if(isset($_POST['Enviar'])){
+        }
+        if (isset($_POST['ok'])) {
             //echo 'Entraaaa';
             //$exito = false;
             require_once __DIR__ . '/../Modelo/reserva.inc'; //recibe los datos
             $reser = $_POST['reser'];
             $reser['idAct'] = $act['idAct'];
             $reser['pagado'] = false;
-            $exito=true;
-            try{
-                $reservaObj = new Reserva($reser); //crea un objetos
-                require_once __DIR__ . '/../Repositorio/reservaRepositorio';
-                (new ReservaRepositorio)->addReserva($reserObj);
+            try {
+                $reserObj = new Reserva($reser); //crea un objetos
+                //die('passAAAAAAAAAAAAAAAAAAAA');
+                require_once __DIR__ . '/../Repositorio/reservaRepositorio.inc';
+                (new ReservaRepositorio())->addReserva($reserObj);
                 $exito = true;
-                header("location: index.php");
-            }catch (PDOException $ex){
+            } catch (PDOException $ex) {
+                $errores['mens'] = $ex->getMessage();
+            } catch (ReservaException $ex) {
                 $errores = $ex->getErrores();
-                $errores['mens'] = $ex->getMenssage();
-            }catch(ReservaException $ex){
-                $errores = $ex->getErrores();
-                $errores['mens'] = $ex->getMenssage();
-        
-              }
-
+                $errores['mens'] = $ex->getMessage();
+            }
         }
         require_once __DIR__ . '/../../app/plantillas/reservar.php';
     }
