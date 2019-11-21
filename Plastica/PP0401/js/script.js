@@ -1,20 +1,19 @@
 const menuIcon = document.querySelector('.menu-icon');
 
-let menuOpen = false;
 const toggleMenu = () => {
+
     const menu = document.querySelector('.menu');
+    const menuOpen = menu.classList.contains('active');
 
     if (menuOpen) {
         //Close
-        menu.style.marginLeft = '';
+        menu.classList.remove('active');
         menuIcon.style.transform = 'rotate(0deg)';
-        menuOpen = false;
 
     } else {
         // Open
-        menu.style.marginLeft = '0';
+        menu.classList.add('active');
         menuIcon.style.transform = 'rotate(45deg)';
-        menuOpen = true;
     }
 
 };

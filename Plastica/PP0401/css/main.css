@@ -29,7 +29,7 @@ header {
     justify-content: center;
     width: 150px;
     min-width: 150px;
-    z-index: 2;
+    z-index: 10;
     position: relative;
 }
 
@@ -67,10 +67,18 @@ header .menu-icon {
 
 .menu {
     background: #252525;
-    transition: margin-left .2s ease-in-out;
-    margin-left: -300px;
+    transition-property: left, top;
+    transition: .2s ease-in-out;
+    left: -20%;
+    position: absolute;
     min-width: 300px;
     max-height: 100vh;
+    z-index: 9;
+    height: 100vh;
+}
+
+nav.active {
+    left: 150px;
 }
 
 .menu ul {
@@ -293,8 +301,15 @@ footer {
     }
 
     .menu {
-        margin-left: initial;
-        margin-top: 0;
+        top: -20%;
+        left: 0;
+        height: auto;
+        width: 100%;
+    }
+
+    nav.active {
+        left: 0;
+        top: 100px;
     }
 
     .project, .aside {
@@ -313,6 +328,16 @@ footer {
 
     .aside > div.video {
         height: 600px;
+    }
+
+    .menu ul > li:hover ul, .menu ul > li > ul:hover {
+        display: block;
+        position: initial;
+        right: 0;
+        top: initial;
+        z-index: 999;
+        list-style: none;
+        width: 100%;
     }
 }
 
