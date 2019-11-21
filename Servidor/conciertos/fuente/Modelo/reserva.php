@@ -1,4 +1,5 @@
 <?php
+
 //Las firmas de los metodos pueden tener nombre de servicio.
 class Reserva
 {
@@ -10,7 +11,8 @@ class Reserva
     private $pagado = false;
 
     public function __construct(array $datos, $nuevo = true)
-    {   if ($nuevo) {
+    {
+        if ($nuevo) {
             if ($dat = $this->setDni($datos['dni'])) {
                 $errores['dni'] = $dat;
             }
@@ -37,7 +39,7 @@ class Reserva
         }
     }
 
-    public function setDni(string $dni):string
+    public function setDni(string $dni): string
     {
         $expreg = '/^\d{8}[ABCDEFGHJKLMNPQRSTW]$/';
         $aDni = strtoupper($dni);
@@ -55,15 +57,18 @@ class Reserva
     {
         $this->fecha = date('Y-m-d');
     }
+
     public function setHora()
     {
         $this->hora = date('H:i:s');
     }
+
     public function setIdActuacion(int $idAct)
     {
         $this->idActuacion = $idAct;
     }
-    public function setLocalidades(string $entradas):string
+
+    public function setLocalidades(string $entradas): string
     {
         $expreg = '/^\d{1,2}$/';
         if (!preg_match($expreg, $entradas)) {
@@ -71,14 +76,15 @@ class Reserva
                 return 'Obligatorio, Debe introducir un número de entradas';
             }
             return 'Valor incorrecto, solo dos digitos';
-        } elseif ((int) $entradas > 10) {
+        } elseif ((int)$entradas > 10) {
             return 'Solo se pueden comprar 10 localidades';
-        } elseif ((int) $entradas == 0) {
+        } elseif ((int)$entradas == 0) {
             return 'Debe introducir un valor correcto';
         }
-        $this->localidades = (int) $entradas;
+        $this->localidades = (int)$entradas;
         return '';
     }
+
     public function setPagado(bool $pagado)
     {
         $this->pagado = $pagado;
@@ -88,22 +94,27 @@ class Reserva
     {
         return $this->dni;
     }
+
     public function getFecha(): string
     {
         return $this->fecha;
     }
+
     public function getHora(): string
     {
         return $this->hora;
     }
+
     public function getIdActuacion(): int
     {
         return $this->idActuacion;
     }
+
     public function getLocalidades(): int
     {
         return $this->localidades;
     }
+
     public function getPagado(): bool
     {
         return $this->pagado;
