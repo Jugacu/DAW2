@@ -3,11 +3,11 @@
 session_start();
 //error_reporting(E_ALL);
 
-require_once __DIR__ . '/fuente/Controlador/defaultController.inc'; /*controladores */
-require_once __DIR__ . '/app/conf/rutas.inc'; /*Ubicación del archivo de rutas*/
-require_once __DIR__ . '/fuente/Controlador/actuacionController.inc';
-require_once __DIR__ . '/fuente/Controlador/reservaController.inc';
-require_once __DIR__ . '/fuente/Controlador/noticiasController.inc';
+require_once __DIR__ . '/fuente/Controlador/defaultController.php'; /*controladores */
+require_once __DIR__ . '/app/conf/rutas.php'; /*Ubicación del archivo de rutas*/
+require_once __DIR__ . '/fuente/Controlador/actuacionController.php';
+require_once __DIR__ . '/fuente/Controlador/reservaController.php';
+require_once __DIR__ . '/fuente/Controlador/noticiasController.php';
 
 // Parseo de la ruta
 if (isset($_GET['ctl'])) {

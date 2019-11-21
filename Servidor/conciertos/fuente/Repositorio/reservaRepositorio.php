@@ -5,7 +5,7 @@ class ReservaRepositorio
     {
         $sql = "INSERT INTO reserva (dni,fecha,hora,idActuacion,localidades,pagado)
                    VALUES (:dni, :fecha, :hora, :idActuacion, :entradas, :pagado)";
-        require_once __DIR__ . '/../../core/conexionBd.inc';
+        require_once __DIR__ . '/../../core/conexionBd.php';
         try {
             $con = (new ConexionBd())->getConexion(); // conexion
             $snt = $con->prepare($sql); //preparacion

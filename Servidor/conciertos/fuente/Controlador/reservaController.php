@@ -1,4 +1,5 @@
 <?php
+
 class ReservaController
 {
     public function reservar(array $act)
@@ -10,14 +11,14 @@ class ReservaController
         if (isset($_POST['ok'])) {
             //echo 'Entraaaa';
             //$exito = false;
-            require_once __DIR__ . '/../Modelo/reserva.inc'; //recibe los datos
+            require_once __DIR__ . '/../Modelo/reserva.php'; //recibe los datos
             $reser = $_POST['reser'];
             $reser['idAct'] = $act['idAct'];
             $reser['pagado'] = false;
             try {
                 $reserObj = new Reserva($reser); //crea un objetos
                 //die('passAAAAAAAAAAAAAAAAAAAA');
-                require_once __DIR__ . '/../Repositorio/reservaRepositorio.inc';
+                require_once __DIR__ . '/../Repositorio/reservaRepositorio.php';
                 (new ReservaRepositorio())->addReserva($reserObj);
                 $exito = true;
             } catch (PDOException $ex) {

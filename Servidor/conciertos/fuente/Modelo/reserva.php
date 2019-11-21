@@ -18,7 +18,7 @@ class Reserva
                 $errores['localidades'] = $dat;
             }
             if (isset($errores)) {
-                require_once __DIR__ . '/reservaException.inc';
+                require_once __DIR__ . '/reservaException.php';
                 throw new ReservaException($errores, 'Reserva incorrecta');
             } else {
                 $this->setHora();

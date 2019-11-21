@@ -1,12 +1,12 @@
 <?php
-class NoticiasRepositorio
+//De aquí sale la informacion para vista verActuaciones.php
+class ActuacionRepositorio
 {
-    public function findAllNoticias()
-    {
-        //Extraigo de la base de datos el titular y la noticia. Todas.
-        $sql = 'SELECT idNoticia AS idNot, titular, desarrollo FROM Noticias';
-        //incluyo el archivo de conexion a la base de datos.
-        require_once __DIR__ . '/../../core/conexionBd.inc';
+    public function findAllActuaciones():array{
+        //Consulta que extrae toda la tabla de actiaciones de grupos.
+        $sql='SELECT idActuacion AS idAct, Fecha, Hora, Grupo, Precio, entradasDisponibles as Disponibles FROM Actuacion';
+        //
+        require_once __DIR__ . '/../../core/conexionBd.php';
         try{
             $con = (new ConexionBd())->getConexion();
             $snt = $con->prepare($sql);
