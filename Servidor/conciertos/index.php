@@ -8,6 +8,7 @@ require_once __DIR__ . '/app/conf/rutas.php'; /*Ubicación del archivo de rutas*
 require_once __DIR__ . '/fuente/Controlador/actuacionController.php';
 require_once __DIR__ . '/fuente/Controlador/reservaController.php';
 require_once __DIR__ . '/fuente/Controlador/noticiasController.php';
+require_once __DIR__ . '/fuente/Controlador/authController.php';
 
 // Parseo de la ruta
 if (isset($_GET['ctl'])) {

@@ -32,7 +32,8 @@
            controlador (y método) que debe procesar la petición
       -->
       <a href="index.php?ctl=verTodosEspectaculos">Ver Actuaciones</a> |
-      <a href="index.php?ctl=noticias">Noticias</a> 
+      <a href="index.php?ctl=noticias">Noticias</a> |
+      <a href="index.php?ctl=auth">Auth</a>
       <hr>
     </nav>
     <div id="contenido">
