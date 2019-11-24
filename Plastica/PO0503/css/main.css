@@ -42,7 +42,7 @@ body {
     position: relative;
     height: 138px;
     width: 138px;
-    animation: wheel 5s linear infinite;
+    animation: wheel 2s linear infinite;
 }
 
 .wheel:first-child {
@@ -61,7 +61,11 @@ body {
     }
 
     60% {
-        transform: rotate(90deg);
+        transform: rotate(120deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }
 
