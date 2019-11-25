@@ -1,8 +1,5 @@
 export default class BuildingManager {
-
-    /**
-     * @param building Building
-     */
+    
     constructor() {
         this.buildings = new Map();
     }
