@@ -52,7 +52,7 @@ export default class Building {
     }
 
     setDoorOwner(name, floor_index, door_number) {
-        if (floor_index < 0 || !floor_index) {
+        if (floor_index < 0 || typeof floor_index === 'undefined' || floor_index === null) {
             this.logger.innerHTML += `<p>NO se pueden introducir número de puertas negativos o nulos.</p>`
             return;
         }
