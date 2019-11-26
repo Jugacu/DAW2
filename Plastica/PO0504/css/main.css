@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    margin: 0;
+    background: #1d1d1d;
+}
+
+#wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    background-image: url("../img/iescomercio.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 280px;
+    height: 175px;
+}
+
+#login {
+    margin-right: 40px;
+}
+
+#login input {
+    padding: 5px;
+    transition: ease-in-out .2s;
+}
+
+#login input:hover {
+    transform: rotate(10deg) scale(1.5);
+}
+
+#login input[type=submit] {
+    border: 2px solid #1e5882;
+    color: #0c4e89;
+    background: #68b4fe;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+}
+
+#slider {
+    height: 370px;
+    width: 100%;
+    background: purple;
+    position: relative;
+    overflow: hidden;
+}
+
+#slider img {
+    position: absolute;
+    height: 370px;
+    width: 100%;
+    object-fit: fill;
+}
+
+#slider img:last-child {
+    animation: slider linear 15s infinite;
+}
+
+#div {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 10px;
+    background: #007acd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+    height: 150px;
+    width: calc(100% / 4);
+    background: white;
+    padding: 80px 20px 20px 20px;
+    margin: 0 5px;
+    border-radius: 10px;
+}
+
+.box p {
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    transition: color ease-in-out .5s;
+}
+
+.box .square {
+    position: absolute;
+    left: 50%;
+    background: #0c4e89;
+    height: 35px;
+    width: 35px;
+    transform: translate(-50%, 0);
+    top: 20px;
+    transition: transform ease-in-out .5s;
+}
+
+.box:hover .square {
+    transform: translate(-50%, 0) scale(20);
+}
+
+.box:hover p{
+    color: white;
+}
+
+@keyframes slider {
+    0% {
+        width: 0;
+    }
+
+    33% {
+        width: 0;
+    }
+
+    49.5% {
+        width: 100%;
+    }
+
+    82.5% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        flex-direction: column;
+        background: #009db4;
+    }
+
+    #login {
+        margin: 20px;
+    }
+
+    #div {
+        flex-direction: column;
+    }
+
+    .box {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #login form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #login {
+        width: 280px;
+    }
+
+    #login input {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
