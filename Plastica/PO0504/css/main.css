@@ -164,6 +164,10 @@ header {
 }
 
 @media screen and (max-width: 500px) {
+    #slider img {
+        object-fit: cover;
+    }
+
     #login form {
         display: flex;
         flex-direction: column;
