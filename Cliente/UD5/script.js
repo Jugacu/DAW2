@@ -1,9 +1,12 @@
 import Building from "./buildings/Building.js";
-import BuildingManager from "./buildings/BuildingManager.js";
 
 const building = new Building('huesca', 25, 26002);
-const manager = new BuildingManager();
+building.addFloor(5, 7);
 
-manager.addBuilding(building);
-
-manager.addFloors(building, 5, 6);
+building.setDoorOwner('Julián & Billie Eilish', 2, 5);
+building.setDoorOwner('Vecinos', 2, 6);
+building.setDoorOwner('XDDD', undefined, 6);
+building.printStreet();
+building.printNumber();
+building.printPostal();
+building.printFloors();
