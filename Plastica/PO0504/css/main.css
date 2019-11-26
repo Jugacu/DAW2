@@ -36,6 +36,7 @@ header {
 
 #login input {
     padding: 5px;
+    box-sizing: border-box;
     transition: ease-in-out .2s;
 }
 
