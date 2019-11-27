@@ -18,5 +18,6 @@ $mapeoRutas =
     'verTodosEspectaculos' => array('controller' => 'actuacionController', 'action' => 'verActuaciones'),
     'reservar' =>  array('controller' => 'reservaController', 'action' => 'reservar'),
     'noticias' => array('controller' => 'noticiasController', 'action' => 'verNoticias'),
+    'noticias_admin' => array('controller' => 'noticiasController', 'action' => 'verNoticias_admin'),
     'auth' => array('controller' => 'authController', 'action' => 'verAuth')
   );
