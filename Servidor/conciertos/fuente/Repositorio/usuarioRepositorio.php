@@ -7,17 +7,17 @@ class usuarioRepositorio
 {
     public function addUser(Usuario $user)
     {
-       try {
-           $sql = 'insert into Usuario (username, password) values (:username, :password)';
-           $con = (new ConexionBd())->getConexion();
+        try {
+            $sql = 'insert into Usuario (username, password) values (:username, :password)';
+            $con = (new ConexionBd())->getConexion();
 
-           $snt = $con->prepare($sql);
-           $snt->bindValue(':username', $user->getUsername());
-           $snt->bindValue(':password', $user->getPassword());
+            $snt = $con->prepare($sql);
+            $snt->bindValue(':username', $user->getUsername());
+            $snt->bindValue(':password', $user->getPassword());
 
-           $con->beginTransaction();
-           $snt->execute();
-           $con->commit();
+            $con->beginTransaction();
+            $snt->execute();
+            $con->commit();
 
         } catch (PDOException $ex) {
             throw $ex;
@@ -28,4 +28,26 @@ class usuarioRepositorio
             $con = null;
         }
     }
+
+    public function getUser(Usuario $user)
+    {
+        try {
+            $sql = 'select * from Usuario where username = :username';
+            $con = (new ConexionBd())->getConexion();
+
+            $snt = $con->prepare($sql);
+            $snt->bindValue(':username', $user->getUsername());
+            $snt->execute();
+
+            $data = $snt->fetch(PDO::FETCH_ASSOC);
+            return $data;
+
+        } catch (PDOException $ex) {
+            throw $ex;
+        } finally {
+            $snt = null;
+            $con = null;
+        }
+    }
+
 }
