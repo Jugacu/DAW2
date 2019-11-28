@@ -11,7 +11,7 @@ if (isset($errors) && sizeof($errors) <= 0) {
         <input required name="titular" type="text" placeholder="titulo" value="<?= $noticia['titular'] ?>"><br>
         <textarea required name="desarrollo" id="" cols="30" rows="10"><?= $noticia['desarrollo'] ?></textarea>
         <br>
-        <input type="submit" value="editar" name="edit">
+        <input type="submit" value="<?=$mode === 'EDITAR' ? 'editar' : 'crear' ?>" name="<?=$mode === 'EDITAR' ? 'edit' : 'create' ?>">
     </form>
     <?php
 }

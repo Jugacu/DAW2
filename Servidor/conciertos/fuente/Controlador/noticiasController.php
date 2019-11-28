@@ -26,7 +26,17 @@ class NoticiasController
 
 
         //NUEVA
-        if(isset())
+        if (!isset($_GET['edit']) || !isset($_GET['delete'])) {
+            if (isset($_POST['create'])) {
+                try {
+                    $repo->createNew($_POST['titular'], $_POST['desarrollo']);
+                    header('Location: /?ctl=noticias');
+                } catch (Exception $e) {
+                    array_push($errors, 'Error al crear la noticia');
+                }
+            }
+        }
+
 
         // Editar
         if (isset($_GET['edit'])) {

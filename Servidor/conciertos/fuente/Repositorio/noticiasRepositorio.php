@@ -47,6 +47,25 @@ class NoticiasRepositorio
         }
     }
 
+    public function createNew(string $title, string $des): void
+    {
+        $sql = 'insert into noticias (titular, desarrollo) values (:title, :des) ';
+
+        try {
+            $con = (new ConexionBd())->getConexion();
+            $snt = $con->prepare($sql);
+            $snt->bindParam(':title', $title);
+            $snt->bindParam(':des', $des);
+
+            $snt->execute();
+        } catch (PDOException $ex) {
+            throw $ex;
+        } finally {
+            $snt = null;
+            $con = null;
+        }
+    }
+
     public function editNew(int $id, string $title, string $des): void
     {
         $sql = 'update noticias set titular=:title, desarrollo=:des where idnoticia=:id';
