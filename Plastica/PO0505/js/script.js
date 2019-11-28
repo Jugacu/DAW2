@@ -21,7 +21,7 @@ setInterval(() => {
                 nextShouldUpdate = false;
             }
 
-            // If its the last of the array and it needs update it should return to the beginning
+            // If its the last of the array and its checked it should reset
             if (index === inputs.length - 1 && input.checked) {
                 shouldReset = true;
             }
