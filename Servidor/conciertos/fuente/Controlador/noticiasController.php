@@ -26,7 +26,7 @@ class NoticiasController
 
 
         //NUEVA
-        if (!isset($_GET['edit']) || !isset($_GET['delete'])) {
+        if (!isset($_GET['edit']) && !isset($_GET['delete'])) {
             if (isset($_POST['create'])) {
                 try {
                     $repo->createNew($_POST['titular'], $_POST['desarrollo']);

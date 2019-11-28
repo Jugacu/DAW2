@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$mode = isset($_GET['edit']) ? 'EDITAR' : !isset($_GET['delete']) ? 'CREAR' : 'BORRAR'
+$mode = (isset($_GET['edit'])) ? 'EDITAR': 'CREAR'
 ?>
 <h2>NOTICIAS ADMIN - <?= $mode ?></h2>
 
