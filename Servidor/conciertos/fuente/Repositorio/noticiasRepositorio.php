@@ -7,7 +7,7 @@ class NoticiasRepositorio
     public function findAllNoticias()
     {
         //Extraigo de la base de datos el titular y la noticia. Todas.
-        $sql = 'SELECT idNoticia AS idNot, titular, desarrollo FROM Noticias';
+        $sql = 'SELECT idNoticia AS idNot, titular, desarrollo FROM Noticias order by idNot desc';
         //incluyo el archivo de conexion a la base de datos.
         try {
             $con = (new ConexionBd())->getConexion();

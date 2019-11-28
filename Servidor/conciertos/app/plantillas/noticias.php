@@ -6,7 +6,6 @@
 ?>
 
 <?php foreach ($noticias as $key => $value) : ?>
-    <p>
     <h3><?= $value['titular']; ?> </h3>
     <h4>
         <?=
@@ -14,7 +13,8 @@
             '<a href="/?ctl=noticias_admin&edit=' . $value['idNot'] . '">editar</a> | <a href="/?ctl=noticias_admin&delete=' . $value['idNot'] . '">borrar</a>' : ''
         ?>
     </h4>
-    <?= $value['desarrollo']; ?><br>
+    <p>
+        <?= $value['desarrollo']; ?><br>
     </p>
 <?php endforeach; ?>
 <?php $contenido = ob_get_clean();
