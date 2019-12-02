@@ -13,32 +13,32 @@
     transform: perspective(700px) rotateX(-30deg) rotateY(-30deg);
 }
 
-.cubo .cara#superior {
+.cubo .cara#top {
     background-color: orange;
     transform: rotateX(90deg) translateZ(100px);
 }
 
-.cubo .cara#frente {
+.cubo .cara#front {
     background-color: red;
     transform: translateZ(100px);
 }
 
-.cubo .cara#atras {
+.cubo .cara#back {
     background-color: green;
     transform: translateZ(-100px);
 }
 
-.cubo .cara#derecha {
+.cubo .cara#right {
     background-color: blue;
     transform: rotateY(90deg) translateZ(100px);
 }
 
-.cubo .cara#izquierda {
+.cubo .cara#left {
     background-color: yellow;
     transform: rotateY(-90deg) translateZ(100px);
 }
 
-.cubo .cara#inferior {
+.cubo .cara#bottom {
     background-color: fuchsia;
     transform: rotateX(-90deg) translateZ(100px);
 }

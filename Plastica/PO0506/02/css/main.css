@@ -1,0 +1,68 @@
+body {
+    background: #1d1d1d;
+}
+
+.cube, .cube .side {
+    width: 200px;
+    height: 200px;
+}
+
+.cube .side {
+    position: absolute;
+    background-size: 1200px;
+    background-image: url("../img/dado.jpg");
+}
+
+.cube {
+    margin: 100px auto;
+    transform-style: preserve-3d;
+    transform: perspective(700px) rotateX(-30deg) rotateY(-30deg);
+}
+
+.cube .side#top {
+    background-position: 0 bottom;
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube .side#front {
+    background-position: 200px 0;
+    transform: translateZ(100px);
+}
+
+.cube .side#back {
+    background-position: 400px -200px;
+    transform: translateZ(-100px);
+}
+
+.cube .side#right {
+    background-position: 600px -400px;
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube .side#left {
+    background-position: 800px -600px;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube .side#bottom {
+    background-position: 1000px -800px;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+.cube {
+    animation: rotate 1s infinite linear;
+    animation-play-state: paused;
+}
+
+.cube:hover {
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(720deg) rotateY(360deg);
+    }
+}
