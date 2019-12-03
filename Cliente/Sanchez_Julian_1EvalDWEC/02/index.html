@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>02</title>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            * {
+                font-family: sans-serif;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            td, th {
+                padding: 5px;
+                border: 1px solid black;
+            }
+
+            #logger {
+                background: lightgrey;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Foto</th>
+                <th>Producto</th>
+                <th>Euros</th>
+                <th>Control</th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="./img/huawei.jpg" height="120" alt="hawai">
+                </td>
+                <td>
+                    <p>
+                            Marca: Huawey <br>
+                            Modelo: P30 Aurora <br>
+                            Descripción: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, optio. <br>
+                            Color: Azul <br>
+                            Camara: 40 MPx
+                    </p>
+                </td>
+                <td>
+                    459,00€
+                </td>
+                <td>
+                    <button id="huaweiBtn">Adquirir</button>
+                </td>
+            </tr>
+            <tr>
+                    <td>
+                        <img src="./img/tablet_samsung.jpg" height="120" alt="hawai">
+                    </td>
+                    <td>
+                        <p>
+                                Marca: Samsumg <br>
+                                Modelo: S5e <br>
+                                Descripción: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, optio. <br>
+                                Color: Plata <br>
+                                Procesador: Qualcom
+                        </p>
+                    </td>
+                    <td>
+                        439,00€
+                    </td>
+                    <td>
+                        <button id="samsungBtn">Adquirir</button>
+                    </td>
+                </tr>
+        </table>
+        
+        <div id="logger">
+            <h1>Productos adquiridos</h1>
+        </div>        
+        <script src="./js/clases/Dispositivo.js"></script>
+        <script src="./js/clases/Smartphone.js"></script>
+        <script src="./js/clases/Tablet.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>

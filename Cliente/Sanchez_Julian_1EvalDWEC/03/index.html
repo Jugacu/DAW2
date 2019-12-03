@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>03</title>
+        <style>
+                * {
+                    font-family: sans-serif;
+                }
+                #wrapper {
+                    text-align: center;
+                    padding: 5px;
+                    box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+
+                input {
+                    text-align: center;
+                }
+
+                img {
+                    margin: 0 auto;
+                    display: none;
+                }
+            </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Hora actual</h2>
+            <input id="h" type="text" disabled> :
+            <input id="m" type="text" disabled> :
+            <input id="s" type="text" disabled>
+
+            <h2>Programa la alarma</h2>
+            <input placeholder="hora" id="ph" type="number"> :
+            <input placeholder="minutos" id="pm" type="number">
+            <br><br>
+            <button id="enable">Activar</button>
+            <button id="disable">Desactivar</button>
+            <br><br>
+            <img id="img" src="./img/despertador.jpg" alt="wakeup">
+        </div>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
