@@ -19,7 +19,7 @@ const updateTime = () => {
     h.value = now.getHours();
     m.value = now.getMinutes();
     s.value = now.getSeconds();
-}
+};
 
 // Actualización
 let updateInterval = setInterval(() => {
@@ -37,14 +37,14 @@ updateTime();
 */
 enableBtn.addEventListener('click', () => {
     if((ph.value > 23 ||ph.value < 0) || (pm.value > 59 ||pm.value < 0)){
-        alert('Introduce una hora válida')
+        alert('Introduce una hora válida');
         return;
     }
 
     ringHour = ph.value;
     ringMinute = pm.value;
     img.style.display = 'none';
-})
+});
 
 disableBtn.addEventListener('click', () => {
     ph.value = '';
@@ -52,4 +52,4 @@ disableBtn.addEventListener('click', () => {
     ringHour = undefined;
     ringMinute = undefined;
     img.style.display = 'none';
-})
+});
