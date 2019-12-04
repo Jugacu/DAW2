@@ -1,0 +1,51 @@
+body {
+    background: #f9f9f9;
+}
+
+.card {
+    transform-style: preserve-3d;
+    height: 480px;
+    width: 355px;
+    margin: 200px auto;
+    transition: transform .5s ease-in-out;
+    /*
+        Nearest-neighbor :)
+     */
+    image-rendering: optimizeSpeed; /* Legal fallback */
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: crisp-edges; /* CSS4 Proposed */
+    image-rendering: pixelated; /* CSS4 Proposed */
+    -ms-interpolation-mode: nearest-neighbor; /* IE8+ */
+}
+
+.card:hover {
+    transform: rotateY(-180deg);
+}
+
+.card > .front, .card > .back {
+    background-size: 4600px;
+    background-image: url("../img/cartas.png");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.card > .front {
+    animation: spooky .5s steps(2) infinite;
+    transform: rotateY(-180deg);
+}
+
+.card > .back {
+    transform: translateZ(1px);
+    background-position: 0 -1913px;
+}
+
+@keyframes spooky {
+    from {
+        background-position: -355px bottom;
+    }
+    to {
+        background-position: -1063px bottom;
+    }
+}
