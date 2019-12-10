@@ -1,0 +1,79 @@
+/*
+    @author Julián Sánchez
+    @version Examen 10/12/2019
+ */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li > a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu > li {
+    display: inline-block;
+    padding: 15px;
+}
+
+.menu > li:hover {
+    background: #e74c3c;
+    cursor: pointer;
+}
+
+.menu > li:hover > .submenu {
+    display: block;
+}
+
+.menu > li:hover > .submenu li:nth-child(even) {
+    animation: animationLeft .2s ease-in forwards;
+}
+
+.menu > li:hover > .submenu li:nth-child(odd) {
+    animation: animationRight .2s ease-in forwards;
+}
+
+.menu > li > .submenu {
+    display: none;
+    position: absolute;
+    margin-left: -2.5em;
+    margin-top: .92em;
+}
+
+.menu > li > .submenu li {
+    display: block;
+    padding: 15px 25px;
+    position: relative;
+    background: linear-gradient(-95deg, #273646, #34495E 60%, #273646 90%);
+}
+
+.menu > li > .submenu li:hover {
+    background: linear-gradient(90deg, #E74C3C 0%, #B43C2F 100%);
+}
+
+.menu {
+    display: inline-block;
+    background: #34495e;
+}
+
+@keyframes animationLeft {
+    from {
+        right: 35px;
+    }
+    to {
+        right: 0;
+    }
+}
+
+@keyframes animationRight {
+    from {
+        left: 35px;
+    }
+    to {
+        left: 0;
+    }
+}
