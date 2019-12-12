@@ -1,0 +1,33 @@
+body {
+    overflow-x: hidden;
+    height: 4550px;
+    margin: 0;
+}
+
+#wrapper {
+    position: relative;
+}
+
+#sky, #bg, #fg {
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: repeat-x;
+    background-size: contain;
+}
+
+#sky {
+    z-index: 1;
+    background-image: url("../img/sky.png");
+}
+
+#bg {
+    z-index: 2;
+    background-image: url("../img/bg.png");
+}
+
+#fg {
+    z-index: 3;
+    background-image: url("../img/fg.png");
+}
