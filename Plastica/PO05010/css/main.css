@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body {
     overflow-x: hidden;
     height: 4550px;
     margin: 0;
+    font-family: Roboto, sans-serif;
 }
 
 #wrapper {
@@ -29,6 +32,13 @@ body {
 }
 
 #fg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 3;
     background-image: url("../img/fg.png");
+}
+
+#fg h1 {
+    color: white;
 }
