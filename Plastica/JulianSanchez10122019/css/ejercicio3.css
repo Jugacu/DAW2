@@ -1,0 +1,195 @@
+/*
+    @author Julián Sánchez
+    @version Examen 10/12/2019
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row1 {
+    background: #333333;
+    color: #c0bab6;
+}
+
+#header, #topnav, #container, footer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#header a {
+    color: #c0bab6;
+    text-decoration: none;
+}
+
+#hgroup h2 {
+    font-size: .6em;
+}
+
+.row2 {
+    background: #232323;
+}
+
+#topnav ul {
+    list-style: none;
+    display: flex;
+}
+
+#topnav ul li {
+    position: relative;
+}
+
+#topnav a {
+    text-decoration: none;
+}
+
+#topnav ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
+#topnav ul li.active a, #topnav > ul > li:hover > a {
+    color: orange;
+}
+
+#topnav a {
+    color: #919191;
+}
+
+#topnav > ul li a.drop + ul {
+    display: none;
+    position: absolute;
+    background: #111;
+    padding: 5px 15px;
+    width: 150px;
+    left: -0.1em;
+    z-index: 9;
+}
+
+#topnav > ul li:hover > a.drop + ul {
+    display: block;
+}
+
+#topnav > ul li > a.drop + ul {
+    padding: 0;
+}
+
+#topnav > ul li > a.drop + ul li:hover {
+    background: grey;
+}
+
+#topnav > ul li > a.drop + ul li {
+    margin: 0;
+    padding: 10px 20px;
+}
+
+#topnav > ul li > a.drop + ul > li a.drop + ul {
+    left: 150px;
+    top: -1px;
+    z-index: 10;
+}
+
+.full_width div {
+    float: left;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.full_width div:not(:last-child) {
+    margin-right: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.one_half, .two_quarter, .three_sixth {
+    width: calc(50% - 20px);
+}
+
+.one_third, .two_sixth {
+    width: calc(33.33% - 20px);
+}
+
+.two_third, .four_sixth {
+    width: calc(66.66% - 20px);
+}
+
+.one_quarter {
+    width: calc(25% - 20px);
+}
+
+.one_sixth {
+    width: calc(16.66% - 20px);
+}
+
+.three_quarter {
+    width: calc(75% - 20px);
+}
+
+.five_sixth {
+    width: calc(83.33% - 20px);
+}
+
+.row4 {
+    background-color: #232323;
+    clear: both;
+}
+
+footer {
+    color: #c0bab6;
+}
+
+footer a {
+    color: #c0bab6;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    #header, #topnav, #container, footer {
+        width: 100%;
+        margin: 0;
+    }
+
+    .full_width div:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .one_half, .two_quarter, .three_sixth {
+        width: 50%;
+    }
+
+    .one_third, .two_sixth {
+        width: 33.33%;
+    }
+
+    .two_third, .four_sixth {
+        width: 66.66%;
+    }
+
+    .one_quarter {
+        width: 25% ;
+    }
+
+    .one_sixth {
+        width: 16.66%;
+    }
+
+    .three_quarter {
+        width: 75%;
+    }
+
+    .five_sixth {
+        width: 83.33%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    div.full_width div {
+        width: 100%;
+        float: none;
+    }
+}
+
