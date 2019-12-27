@@ -33,7 +33,7 @@ main {
 }
 
 #wrapper {
-    width: 100%;
+    width: calc(100% - 500px);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -262,8 +262,29 @@ main {
     color: rgba(255, 255, 255, .6);
 }
 
+/*tablet layout*/
+@media only screen and (max-width: 1200px) {
+    #wrapper {
+        width: calc(100% - 400px);
+    }
+
+    #player {
+        width: 400px;
+    }
+
+    .control-icon.play {
+        height: 40px;
+        width: 40px;
+    }
+
+    .control-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
 /*mobile layout*/
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1000px) {
     main {
         flex-direction: column;
         overflow: auto;
@@ -320,8 +341,10 @@ main {
     }
 
     #player #song #secondary-controls {
+        width: calc(100% - 60px);
         height: 100%;
         bottom: 0;
+        left: 30px;
         align-items: center;
     }
 
