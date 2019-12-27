@@ -83,6 +83,7 @@ main {
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, .55);
+    overflow: hidden;
 }
 
 #player > #song {
@@ -197,7 +198,7 @@ main {
 
 .progress > .percent {
     height: 100%;
-    background: teal;
+    background: rgba(0, 170, 170, 1);
 }
 
 .percent.white {
@@ -228,6 +229,9 @@ main {
 .song > .artwork {
     height: 200px;
     background-image: url("../img/album.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #111;
     background-size: contain;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -256,6 +260,78 @@ main {
 
 .song h4 {
     color: rgba(255, 255, 255, .8);
+}
+
+/*mobile layout*/
+@media only screen and (max-width: 1000px) {
+    main {
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .song {
+        width: 100%;
+    }
+
+    .song > .artwork {
+        background-size: cover;
+    }
+
+    #wrapper {
+        width: 100%;
+        /*space for the player*/
+        padding-bottom: 110px;
+    }
+
+    #player {
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+        bottom: 0;
+    }
+
+    #player > #song {
+        width: 100%;
+        height: 100px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #player > #queue {
+        display: none;
+    }
+
+    #player .control-icon.play {
+        height: 30px;
+        width: 30px;
+    }
+
+    #player .control-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .flex {
+        pointer-events: initial;
+    }
+
+    #secondary-controls {
+        pointer-events: none;
+    }
+
+    #player #song #secondary-controls {
+        height: 100%;
+        bottom: 0;
+        align-items: center;
+    }
+
+    #player .time {
+        font-size: .8em;
+    }
+
+    .progress {
+        display: none;
+    }
 }
 
 ::-webkit-scrollbar {
