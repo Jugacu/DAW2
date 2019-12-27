@@ -33,7 +33,7 @@ main {
 }
 
 #wrapper {
-    width: 70%;
+    width: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -78,7 +78,7 @@ main {
 }
 
 #player {
-    width: 30%;
+    width: 500px;
     background: #111;
     display: flex;
     flex-direction: column;
@@ -259,7 +259,7 @@ main {
 }
 
 .song h4 {
-    color: rgba(255, 255, 255, .8);
+    color: rgba(255, 255, 255, .6);
 }
 
 /*mobile layout*/
@@ -331,6 +331,19 @@ main {
 
     .progress {
         display: none;
+    }
+
+    #menu > ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu > ul > li.active {
+        color: rgba(0, 170, 170, 1);
+    }
+
+    #menu > ul > li.active:after {
+        content: none;
     }
 }
 
