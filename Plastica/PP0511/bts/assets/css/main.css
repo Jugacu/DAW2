@@ -263,7 +263,7 @@ main {
 }
 
 /*mobile layout*/
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1023px) {
     main {
         flex-direction: column;
         overflow: auto;
@@ -280,7 +280,7 @@ main {
     #wrapper {
         width: 100%;
         /*space for the player*/
-        padding-bottom: 110px;
+        padding-bottom: 115px;
     }
 
     #player {
@@ -344,6 +344,10 @@ main {
 
     #menu > ul > li.active:after {
         content: none;
+    }
+
+    .control-icon:not(:last-child) {
+        margin-right: 30px;
     }
 }
 
