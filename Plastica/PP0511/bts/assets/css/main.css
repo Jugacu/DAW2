@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: Roboto, sans-serif;
+    user-select: none;
+}
+
+h2 {
+    font-weight: 400;
+    text-transform: lowercase;
+    color: rgba(255, 255, 255, .8);
+    font-size: 1.7em;
+    margin: 25px 0;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    background: #0f0f0f;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#wrapper {
+    width: 70%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    overflow: auto;
+}
+
+#menu > ul {
+    list-style: none;
+    font-size: 2em;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#menu > ul > li:not(:last-child) {
+    margin-right: 15px;
+}
+
+#menu > ul > li {
+    cursor: default;
+}
+
+#menu > ul > li:hover:not(.active) {
+    color: rgba(255, 255, 255, .8);
+    cursor: pointer;
+}
+
+#menu > ul > li.active {
+    position: relative;
+}
+
+#menu > ul > li.active:after {
+    content: '';
+    border-bottom: 3px solid rgb(0, 170, 170);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+}
+
+#player {
+    width: 30%;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, .55);
+}
+
+#player > #song {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+#song #controls {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#song #secondary-controls {
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 20px);
+    font-size: 2em;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#secondary-controls .control-icon:active {
+    opacity: 1;
+}
+
+#secondary-controls .control-icon {
+    opacity: .6;
+    width: 30px;
+}
+
+#secondary-controls .control-icon:not(:last-child) {
+    margin-right: 10px;
+}
+
+.control-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-size: contain;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    filter: brightness(0) invert(1);
+}
+
+.control-icon:hover {
+    opacity: .8;
+}
+
+.control-icon:not(:last-child) {
+    margin-right: 50px;
+}
+
+.control-icon.repeat {
+    background-image: url("../img/icons/update-arrows.png");
+}
+
+.control-icon.shuffle {
+    background-image: url("../img/icons/suffle-symbol.png");
+}
+
+.control-icon.skip-b {
+    background-image: url("../img/icons/skip.png");
+    transform: scale(-1);
+}
+
+.control-icon.play {
+    background-image: url("../img/icons/play-button.png");
+    height: 70px;
+    width: 70px;
+}
+
+.control-icon.skip-f {
+    background-image: url("../img/icons/skip.png");
+}
+
+#song .blur {
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+    opacity: .7;
+    filter: blur(5px);
+    position: absolute;
+    background-position: 50%;
+    z-index: 0;
+    background-image: url("../img/billie.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.progress {
+    height: 20px;
+    width: 100%;
+    background: #0c0c0c;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress.mini {
+    height: 10px;
+}
+
+.progress > .percent {
+    height: 100%;
+    background: teal;
+}
+
+.percent.white {
+    background: rgba(255, 255, 255, 1);
+}
+
+#player > #queue {
+    display: flex;
+    height: calc(100% - 300px);
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: rgba(255, 255, 255, .8);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 20px;
+}
+
+.song {
+    width: 200px;
+    text-align: center;
+}
+
+.song > .artwork {
+    height: 200px;
+    background-image: url("../img/album.jpg");
+    background-size: contain;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.artwork > .control {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.song > .artwork:hover .control {
+    display: flex;
+}
+
+.song h3, .song h4 {
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.song h4 {
+    color: rgba(255, 255, 255, .8);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0 none #fff;
+    border-radius: 0
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fff
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #bfbfbf
+}
+
+::-webkit-scrollbar-track {
+    background: #666;
+    border: 0 none #fff;
+    border-radius: 0
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #666
+}
+
+::-webkit-scrollbar-track:active {
+    background: #333
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent
+}
