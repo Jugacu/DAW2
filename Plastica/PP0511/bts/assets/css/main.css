@@ -58,7 +58,7 @@ main {
     cursor: default;
 }
 
-#menu > ul > li:hover:not(.active) {
+#menu > ul li:hover:not(.active) {
     color: rgba(255, 255, 255, .8);
     cursor: pointer;
 }
@@ -76,6 +76,39 @@ main {
     transform: translate(-50%, 0);
     width: 80%;
 }
+
+
+/*Submenu*/
+#menu > ul li {
+    position: relative;
+}
+
+#menu > ul li:hover > ul {
+    display: block;
+}
+
+
+#menu > ul > li ul {
+    font-size: .6em;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    list-style: none;
+    background: #111;
+    z-index: 2;
+    padding: 15px;
+    display: none;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#menu > ul > li > ul {
+    top: 35px;
+}
+
+
+/*end of submenu*/
 
 #player {
     width: 500px;
@@ -372,6 +405,21 @@ main {
     .control-icon:not(:last-child) {
         margin-right: 30px;
     }
+
+    /*Submenu*/
+    #menu > ul > li ul {
+        font-size: .6em;
+        position: initial;
+        background: transparent;
+        text-align: center;
+    }
+
+    #menu > ul li:hover > ul {
+        display: contents;
+    }
+
+    /*end of submenu*/
+
 }
 
 ::-webkit-scrollbar {
