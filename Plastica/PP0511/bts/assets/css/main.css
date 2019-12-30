@@ -83,6 +83,10 @@ main {
     position: relative;
 }
 
+#menu a {
+    text-decoration: none;
+}
+
 #menu > ul li:hover > ul {
     display: block;
 }

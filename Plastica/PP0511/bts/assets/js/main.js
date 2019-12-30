@@ -14,7 +14,12 @@ const recursiveMenu = (el, i = 0) => {
 };
 
 function onclick() {
-    window.location.href = `./pages/${this.firstChild.nodeValue.trim()}`
+    if (this.dataset.url) {
+        window.location.href = this.dataset.url;
+        return;
+    }
+
+    window.location.href = `/pages/${this.firstChild.nodeValue.trim()}`
 }
 
 const menu = document.querySelector('#menu');
