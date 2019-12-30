@@ -5,7 +5,7 @@ const recursiveMenu = (el, i = 0) => {
 
     children.forEach((c) => {
         if (c.nodeType === 1) {
-            if (c.tagName === 'SPAN') {
+            if (c.tagName === 'SPAN' && !c.dataset.disabled) {
                 c.addEventListener('click', onclick);
             }
             recursiveMenu(c, ++i);
