@@ -151,7 +151,7 @@ main {
     flex-direction: column;
 }
 
-#dmca > * {
+#dmca > *, #session-start > * {
     margin-bottom: 20px;
 }
 
@@ -163,7 +163,7 @@ main {
     width: calc(50% - 10px);
 }
 
-#dmca input, #dmca select, #dmca textarea, #dmca button {
+#dmca input, #dmca select, #dmca textarea, #dmca button, #session-start input, #session-start button {
     resize: vertical;
     background: #1a1a1a;
     border: none;
@@ -171,6 +171,14 @@ main {
     padding: 20px 30px;
     font-size: 1.4em;
     outline: none;
+}
+
+#session-start button {
+    cursor: pointer;
+    background: rgba(0, 170, 170, 1);
+    text-align: right;
+    font-weight: 600;
+    padding: 5px 20px;
 }
 
 #player {
