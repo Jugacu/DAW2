@@ -17,6 +17,10 @@ h2 {
     margin: 25px 0;
 }
 
+h2:nth-child(1) {
+    margin: 0 0 25px 0;
+}
+
 .flex {
     display: flex;
 }
@@ -41,6 +45,10 @@ main {
 
 #content {
     overflow: auto;
+}
+
+#menu {
+    margin-bottom: 25px;
 }
 
 #menu > ul {
@@ -111,8 +119,59 @@ main {
     top: 35px;
 }
 
-
 /*end of submenu*/
+
+#search-form {
+    margin-bottom: 25px;
+}
+
+#search-form input {
+    background: #1a1a1a;
+    border: none;
+    width: 100%;
+    padding: 20px 30px;
+    font-size: 5em;
+    outline: none;
+}
+
+#upload {
+    width: 100%;
+    height: 600px;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 5px dashed #111;
+}
+
+#dmca {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+#dmca > * {
+    margin-bottom: 20px;
+}
+
+#dmca .flex {
+    justify-content: space-between;
+}
+
+#dmca .flex input {
+    width: calc(50% - 10px);
+}
+
+#dmca input, #dmca select, #dmca textarea, #dmca button {
+    resize: vertical;
+    background: #1a1a1a;
+    border: none;
+    width: 100%;
+    padding: 20px 30px;
+    font-size: 1.4em;
+    outline: none;
+}
 
 #player {
     width: 500px;
@@ -369,7 +428,20 @@ main {
         height: 20px;
     }
 
-    .flex {
+    #dmca .flex {
+        flex-direction: column;
+    }
+
+    #dmca .flex input {
+        width: 100%
+    }
+
+    #dmca > *, #dmca > * > *:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+
+    #secondary-controls .flex {
         pointer-events: initial;
     }
 

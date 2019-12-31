@@ -1,5 +1,5 @@
 const recursiveMenu = (el, i = 0) => {
-    if (i > 10) return;
+    if (i > 10 || !el) return;
 
     const children = Array.from(el.childNodes);
 
@@ -19,7 +19,9 @@ function onclick() {
         return;
     }
 
-    window.location.href = `/pages/${this.firstChild.nodeValue.trim()}`
+    let rel = window.location.href.includes('pages') ? '..' : '.';
+
+    window.location.href = `${rel}/pages/${this.firstChild.nodeValue.trim()}.html`;
 }
 
 const menu = document.querySelector('#menu');
