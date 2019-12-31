@@ -175,6 +175,7 @@ main {
 
 #dmca button {
     background: teal;
+    padding: 10px 30px;
 }
 
 #session-start button {
