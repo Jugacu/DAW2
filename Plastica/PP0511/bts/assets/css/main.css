@@ -173,6 +173,10 @@ main {
     outline: none;
 }
 
+#dmca button {
+    background: teal;
+}
+
 #session-start button {
     cursor: pointer;
     background: rgba(0, 170, 170, 1);
