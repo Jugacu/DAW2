@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Can-vas</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<canvas id="circle" height="300" width="600"></canvas>
+<script>
+    const circle = document.querySelector('#circle');
+    const circleCtx = circle.getContext('2d');
+
+    circleCtx.fillStyle = 'rgb(216,191,216)';
+    circleCtx.fillRect(0, 0, circle.width, circle.height);
+
+    circleCtx.beginPath();
+    circleCtx.arc(circle.width / 2, circle.height / 2, circle.height / 2.5, 0, Math.PI * 2);
+    circleCtx.fillStyle = 'purple';
+    circleCtx.fill();
+    circleCtx.strokeStyle = 'rgb(218,112,214)';
+    circleCtx.lineWidth = 10;
+    circleCtx.stroke();
+</script>
+<canvas id="arc" height="300" width="600"></canvas>
+<script>
+
+    const arc = document.querySelector('#arc');
+    const arcCtx = arc.getContext('2d');
+
+    //arc
+    arcCtx.fillStyle = 'rgb(216,100,70)';
+    arcCtx.fillRect(0, 0, arc.width, arc.height);
+
+    arcCtx.beginPath();
+    arcCtx.arc(circle.width / 2, circle.height / 2, circle.height / 2.5, 0, Math.PI / 2);
+    arcCtx.strokeStyle = 'teal';
+    arcCtx.lineWidth = 10;
+    arcCtx.stroke();
+
+</script>
+</body>
+</html>
