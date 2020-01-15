@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>picuchillo</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            background: #1d1d1d;
+        }
+
+        canvas {
+            background: #ffdc73;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600" height="300" id="art"></canvas>
+<script>
+
+    const canvas = document.querySelector('#art');
+    const ctx = canvas.getContext('2d');
+
+    const cX = ctx.canvas.width / 2;
+    const cY = ctx.canvas.height / 2;
+    const r = 70;
+
+
+    // cola
+    ctx.beginPath();
+    ctx.fillStyle = "#fcc";
+    ctx.moveTo(cX + r + 20, cY + r - 30);
+    ctx.lineTo(cX + r - 10, cY);
+    ctx.lineTo(cX + r - 30, cY + 40);
+    ctx.fill();
+
+    // pico
+    ctx.beginPath();
+    ctx.fillStyle = "#f90";
+    ctx.moveTo(cX - r * 1.3, cY - r / 2);
+    ctx.lineTo(cX - r * 1.5 + 60, cY - r / 2 - 10);
+    ctx.lineTo(cX - r * 1.5 + 60, cY - r / 2 + 30);
+    ctx.fill();
+
+    //patatas
+    ctx.beginPath();
+    ctx.fillStyle = "#cccc99"; //green
+    ctx.moveTo(cX  - 5, cY + r + 20);
+    ctx.lineTo(cX + 5, cY + r - 20);
+    ctx.lineTo(cX - 25, cY + r - 20);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#cccc99"; //green
+    ctx.moveTo(cX + 15, cY + r + 20);
+    ctx.lineTo(cX + 25, cY + r - 20);
+    ctx.lineTo(cX - 10, cY + r - 20);
+    ctx.fill();
+
+
+    // gris
+    ctx.beginPath();
+    ctx.fillStyle = "#ccc";
+    ctx.arc(cX, cY, r, 0, 2 * Math.PI);
+    ctx.fill();
+
+    ctx.clip();
+
+    // verde
+    ctx.beginPath();
+    ctx.fillStyle = "#cc9";
+    ctx.arc(cX, cY + 60, r, 0, 2 * Math.PI);
+    ctx.fill();
+
+    // rosa
+    ctx.beginPath();
+    ctx.fillStyle = "#fcc";
+    ctx.arc(cX + 50, cY - 20, r, 0, 2 * Math.PI);
+    ctx.fill();
+
+    //ojo
+    ctx.beginPath();
+    ctx.arc(cX - r / 2, cY - r / 2 + 5, 5, 0, Math.PI * 2, true);
+    ctx.fillStyle = "#fff";
+    ctx.lineWidth = 1;
+    ctx.fill();
+    ctx.stroke();
+
+
+</script>
+</body>
+</html>
