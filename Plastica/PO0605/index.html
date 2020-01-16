@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>locura</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            background: #1d1d1d;
+        }
+
+        canvas {
+            background: #ffdc73;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" height="300" width="600"></canvas>
+<script>
+    const canvas = document.querySelector('#canvas');
+    const ctx = canvas.getContext('2d');
+
+    const center = {
+        x: canvas.width / 2,
+        y: canvas.height / 2
+    };
+
+    const r = center.y * .5;
+    const rad = (Math.PI / 180) * 60;
+
+    ctx.globalCompositeOperation = 'xor';
+
+    for (let i = 0; i < 6; i++) {
+        ctx.beginPath();
+        x = center.x + r * Math.cos(rad * i);
+        y = center.y + r * Math.sin(rad * i);
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+
+        if (i % 2 === 0) {
+            ctx.fillStyle = '#9e379f';
+        } else {
+            ctx.fillStyle = '#40BCF4';
+        }
+
+        ctx.fill();
+    }
+
+
+</script>
+</body>
+</html>

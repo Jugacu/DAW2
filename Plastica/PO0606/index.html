@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>locura</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            background: #1d1d1d;
+        }
+
+        canvas {
+            background: #ffdc73;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" height="600" width="1200"></canvas>
+<script>
+    const canvas = document.querySelector('#canvas');
+    const ctx = canvas.getContext('2d');
+
+    function draw() {
+
+        const center = {
+            x: canvas.width / 2,
+            y: canvas.height / 2
+        };
+
+        const circleNumbers = random(50, 100);
+
+        for (let i = 0; i < circleNumbers; i++) {
+
+            const point = randomCord(canvas.width, canvas.height);
+            const r = random(20, 50);
+
+            ctx.beginPath();
+            ctx.arc(point.x, point.y, r, 0, Math.PI * 2);
+            ctx.fillStyle = randomHex();
+            ctx.fill();
+
+        }
+
+        requestAnimationFrame(draw);
+
+        function randomHex() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        function random(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function randomCord(maxW, maxH) {
+            const x = random(0, maxW);
+            const y = random(0, maxH);
+
+            return {x, y}
+        }
+    }
+
+    requestAnimationFrame(draw);
+</script>
+</body>
+</html>
