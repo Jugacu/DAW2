@@ -42,7 +42,7 @@ function validarEdad() {
     const age = ageEl.value;
 
 
-    if (age < 0 || age > 105) {
+    if (isNaN(age) || age < 0 || age > 105) {
         ageEl.focus();
         ageEl.classList.add('error');
         document.querySelector('#errores').innerHTML = 'La edad ha de estar entre 0 y 105.';
@@ -75,11 +75,68 @@ function validarEmail() {
 
     if (!email.value.match(regExp)) {
         document.getElementById('errores').innerHTML = 'ERROR: No es un email válido.';
-		document.querySelector('#errores').innerHTML = 'Has de introducir un EMAIL válido.';
-		email.focus();
-		email.classList.add('error');
+        document.querySelector('#errores').innerHTML = 'Has de introducir un EMAIL válido.';
+        email.focus();
+        email.classList.add('error');
         return false;
     }
     document.getElementById('email').className = '';
+    return true;
+}
+
+function validarProvincia() {
+    const prov = document.querySelector('#provincia');
+
+    if (prov.value === '0') {
+        document.getElementById('errores').innerHTML = 'ERROR: Has de seleccionar una PROVINCIA';
+        prov.focus();
+        prov.classList.add('error');
+        return false;
+    }
+    document.getElementById('provincia').className = '';
+    return true;
+}
+
+function validarFecha() {
+    const fecha = document.querySelector('#fecha');
+    const regExp = /^[0-9]{2}([-/])[0-9]{2}\1[0-9]{4}$/;
+
+    if (!fecha.value.match(regExp)) {
+        document.getElementById('errores').innerHTML = 'ERROR: Has de seleccionar una FECHA válida';
+        fecha.focus();
+        fecha.classList.add('error');
+        return false;
+    }
+    document.getElementById('fecha').className = '';
+    return true;
+}
+
+function validarTelefono() {
+    const tlf = document.querySelector('#telefono');
+    const regExp = /^[69][0-9]{8}$/;
+
+    if (!tlf.value.match(regExp)) {
+        document.getElementById('errores').innerHTML = 'ERROR: Has de introducir una TELÉFONO válido';
+        tlf.focus();
+        tlf.classList.add('error');
+        return false;
+    }
+    // Si llega aquí es que el teléfono es correcto
+    document.getElementById("telefono").className = "";
+    return true;
+}
+
+function validarHora() {
+    const hora = document.querySelector('#hora');
+    const regExp = /^[0-9]{2}:[0-9]{2}$/;
+
+    if (!hora.value.match(regExp)) {
+        document.getElementById('errores').innerHTML = 'ERROR: Has de introducir una HORA válida';
+        hora.focus();
+        hora.classList.add('error');
+        return false;
+    }
+    // Si llega aquí es que el teléfono es correcto
+    document.getElementById("hora").className = "";
     return true;
 }
