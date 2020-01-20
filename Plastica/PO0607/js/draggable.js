@@ -19,8 +19,10 @@ const draggable = (element, containersSettings) => {
         };
 
         window.onmouseup = (e) => {
-            tryToDrop(element, e);
-            disableMoving(element);
+            if (moving) {
+                tryToDrop(element, e);
+                disableMoving(element);
+            }
         }
 
     }
@@ -53,9 +55,9 @@ const draggable = (element, containersSettings) => {
     }
 
     function disableMoving(element) {
-        element.style.position = 'initial';
-        element.style.left = 'initial';
-        element.style.top = 'initial';
+        element.style.position = '';
+        element.style.left = '';
+        element.style.top = '';
         moving = false;
     }
 
