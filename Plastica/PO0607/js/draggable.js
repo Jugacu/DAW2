@@ -13,10 +13,10 @@ const draggable = (element, containersSettings, boundary) => {
     function setListeners(element) {
         window.onmousemove = (e) => {
             if (moving) {
-                const _boundary = boundary instanceof HTMLElement ? boundary : searchBounds(element, 0);
+                boundary = boundary instanceof HTMLElement ? boundary : searchBounds(element, 0);
 
-                const x = _boundary ? e.clientX - _boundary.getBoundingClientRect().left : e.pageX;
-                const y = _boundary ? e.clientY - _boundary.getBoundingClientRect().top : e.pageY;
+                const x = boundary ? e.clientX - boundary.getBoundingClientRect().left : e.pageX;
+                const y = boundary ? e.clientY - boundary.getBoundingClientRect().top : e.pageY;
 
                 element.style.left = `${x - element.offsetWidth / 2}px`;
                 element.style.top = `${y - element.offsetHeight / 2}px`;
