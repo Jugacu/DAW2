@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag'ndrop</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<h1>Proof of concept</h1>
+<main>
+    <div id="containers">
+        <div id="containerOne" class="container"></div>
+        <div id="containerTwo" class="container"></div>
+        <div id="containerThree" class="container"></div>
+    </div>
+    <div id="draggables">
+        <div id="one" class="draggable">
+            #1
+        </div>
+        <div id="two" class="draggable red">
+            #2
+        </div>
+        <div id="three" class="draggable orange">
+            #3
+        </div>
+    </div>
+</main>
+
+<script src="js/draggable.js"></script>
+<script>
+
+    const containerOne = document.querySelector('#containerOne');
+    const containerTwo = document.querySelector('#containerTwo');
+    const containerThree = document.querySelector('#containerThree');
+
+
+    const draggablesContainer  = document.querySelector('#draggables');
+
+    const draggableOne = document.querySelector('#one');
+    const draggableTwo = document.querySelector('#two');
+    const draggableThree = document.querySelector('#three');
+
+
+    draggable(draggableOne, [
+        {
+            container: containerOne,
+            condition: () => true
+        },
+        {
+            container: draggablesContainer,
+            condition: () => true
+        }
+    ]);
+
+    draggable(draggableTwo, [
+        {
+            container: containerOne,
+            condition: () => true
+        },
+        {
+            container: containerTwo,
+            condition: () => true
+        },
+        {
+            container: draggablesContainer,
+            condition: () => true
+        }
+    ]);
+
+    draggable(draggableThree, [
+        {
+            container: containerOne,
+            condition: () => true
+        },
+        {
+            container: containerThree,
+            condition: () => true
+        },
+        {
+            container: draggablesContainer,
+            condition: () => true
+        }
+    ]);
+</script>
+</body>
+</html>
