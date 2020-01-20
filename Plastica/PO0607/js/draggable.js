@@ -1,4 +1,4 @@
-const draggable = (element, containersSettings) => {
+const draggable = (element, containersSettings, boundary) => {
 
     let moving;
 
@@ -13,8 +13,13 @@ const draggable = (element, containersSettings) => {
     function setListeners(element) {
         window.onmousemove = (e) => {
             if (moving) {
-                element.style.left = `${e.pageX - element.offsetWidth / 2}px`;
-                element.style.top = `${e.pageY - element.offsetHeight / 2}px`;
+                const _boundary = boundary instanceof HTMLElement ? boundary : searchBounds(element, 0);
+
+                const x = _boundary ? e.clientX - _boundary.getBoundingClientRect().left : e.pageX;
+                const y = _boundary ? e.clientY - _boundary.getBoundingClientRect().top : e.pageY;
+
+                element.style.left = `${x - element.offsetWidth / 2}px`;
+                element.style.top = `${y - element.offsetHeight / 2}px`;
             }
         };
 
@@ -25,6 +30,12 @@ const draggable = (element, containersSettings) => {
             }
         }
 
+    }
+
+    function searchBounds(element, index) {
+        if (index > 100 || element === document.body) return null;
+        const position = window.getComputedStyle(element).position;
+        return (position === 'relative' && index > 0) ? element : searchBounds(element.parentElement, ++index);
     }
 
     function tryToDrop(element, event) {
