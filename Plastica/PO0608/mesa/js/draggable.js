@@ -43,7 +43,7 @@ const draggable = (element, containersSettings, boundary) => {
     function searchBounds(element, index) {
         if (index > 100 || element === document.body) return null;
         const position = window.getComputedStyle(element).position;
-        return (position === 'relative' && index > 0) ? element : searchBounds(element.parentElement, ++index);
+        return ((position === 'relative' || position === 'absolute') && index > 0) ? element : searchBounds(element.parentElement, ++index);
     }
 
     function tryToDrop(element, event) {
@@ -82,13 +82,26 @@ const draggable = (element, containersSettings, boundary) => {
         }
     }
 
-    function collides(el1, el2) {
-        let d1 = el1.getBoundingClientRect();
-        let d2 = el2.getBoundingClientRect();
+    function collides(container, element) {
+        if (searchBounds(container, 0) instanceof HTMLElement) {
+            let d1 = element.getBoundingClientRect();
+            let d2 = container.getBoundingClientRect();
 
-        let ox = Math.abs(d1.x - d2.x) < (d1.x < d2.x ? d2.width : d1.width);
-        let oy = Math.abs(d1.y - d2.y) < (d1.y < d2.y ? d2.height : d1.height);
-        return ox && oy;
+            let ox = Math.abs(d1.x - d2.x) < (d1.x < d2.x ? d2.width : d1.width);
+            let oy = Math.abs(d1.y - d2.y) < (d1.y < d2.y ? d2.height : d1.height);
+            return ox && oy;
+        } else {
+            element.offsetBottom = element.offsetTop + element.offsetHeight;
+            element.offsetRight = element.offsetLeft + element.offsetWidth;
+            container.offsetBottom = container.offsetTop + container.offsetHeight;
+            container.offsetRight = container.offsetLeft + container.offsetWidth;
+
+            return !((element.offsetBottom < container.offsetTop) ||
+                (element.offsetTop > container.offsetBottom) ||
+                (element.offsetRight < container.offsetLeft) ||
+                (element.offsetLeft > container.offsetRight));
+        }
+
     }
 
     function enableMoving(element) {
