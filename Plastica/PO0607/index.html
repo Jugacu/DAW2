@@ -32,7 +32,7 @@
     const containerTwo = document.querySelector('#containerTwo');
     const containerThree = document.querySelector('#containerThree');
 
-    const draggablesContainer  = document.querySelector('#draggables');
+    const draggablesContainer = document.querySelector('#draggables');
 
     const draggableOne = document.querySelector('#one');
     const draggableTwo = document.querySelector('#two');
@@ -40,42 +40,38 @@
 
     draggable(draggableOne, [
         {
-            container: containerOne,
-            condition: () => true
+            container: draggablesContainer,
+            condition: () => false
         },
         {
-            container: draggablesContainer,
-            condition: () => true
+            container: containerOne,
+            condition: () => true,
+            onHover: (c, e) => console.log('over!'),
+            onLeave: (c, e) => console.log('leave!')
         }
     ]);
 
     draggable(draggableTwo, [
         {
+            container: draggablesContainer,
+        },
+        {
             container: containerOne,
-            condition: () => true
         },
         {
             container: containerTwo,
-            condition: () => true
-        },
-        {
-            container: draggablesContainer,
-            condition: () => true
         }
     ]);
 
     draggable(draggableThree, [
         {
+            container: draggablesContainer,
+        },
+        {
             container: containerOne,
-            condition: () => true
         },
         {
             container: containerThree,
-            condition: () => true
-        },
-        {
-            container: draggablesContainer,
-            condition: () => true
         }
     ]);
 </script>

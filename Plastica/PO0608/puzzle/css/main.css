@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #1d1d1d;
+}
+
+#grid {
+    display: grid;
+    grid-template-areas: "hijo1 hijo2 hijo3" "hijo4 hijo5 hijo6";
+    width: 1011px;
+    height: 716px;
+    margin: 0 auto;
+}
+
+#grid > div > .piece {
+    position: absolute;
+}
+
+#grid > div:nth-child(odd) {
+    background: white;
+}
+
+#grid > div:nth-child(even) {
+    background: #333333;
+}
+
+#pieces {
+    margin: 0 auto;
+    width: 1011px;
+    height: 119px;
+}
+
+#pieces .piece, .piece.small {
+    width: 112px;
+    height: 119px;
+    float: left;
+    border: 5px solid #503e3e;
+    z-index: 99;
+}
+
+.piece {
+    z-index: 2;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 337px;
+    height: 358px;
+}
+
+.piece.first {
+    background-image: url("../img/i1.jpg");
+}
+
+.piece.second {
+    background-image: url("../img/i2.jpg");
+}
+
+.piece.third {
+    background-image: url("../img/i3.jpg");
+}
+
+.piece.fourth {
+    background-image: url("../img/i4.jpg");
+}
+
+.piece.fifth {
+    background-image: url("../img/i5.jpg");
+}
+
+.piece.sixth {
+    background-image: url("../img/i6.jpg");
+}
