@@ -43,7 +43,7 @@ const draggable = (element, containersSettings, boundary) => {
     function searchBounds(element, index) {
         if (index > 100 || element === document.body) return null;
         const position = window.getComputedStyle(element).position;
-        return (position === 'relative' && index > 0) ? element : searchBounds(element.parentElement, ++index);
+        return ((position === 'relative' || position === 'absolute') && index > 0) ? element : searchBounds(element.parentElement, ++index);
     }
 
     function tryToDrop(element, event) {
@@ -82,16 +82,26 @@ const draggable = (element, containersSettings, boundary) => {
         }
     }
 
-    function collides(el1, el2) {
-        el1.offsetBottom = el1.offsetTop + el1.offsetHeight;
-        el1.offsetRight = el1.offsetLeft + el1.offsetWidth;
-        el2.offsetBottom = el2.offsetTop + el2.offsetHeight;
-        el2.offsetRight = el2.offsetLeft + el2.offsetWidth;
+    function collides(container, element) {
+        if (searchBounds(container, 0) instanceof HTMLElement) {
+            let d1 = element.getBoundingClientRect();
+            let d2 = container.getBoundingClientRect();
 
-        return !((el1.offsetBottom < el2.offsetTop) ||
-            (el1.offsetTop > el2.offsetBottom) ||
-            (el1.offsetRight < el2.offsetLeft) ||
-            (el1.offsetLeft > el2.offsetRight))
+            let ox = Math.abs(d1.x - d2.x) < (d1.x < d2.x ? d2.width : d1.width);
+            let oy = Math.abs(d1.y - d2.y) < (d1.y < d2.y ? d2.height : d1.height);
+            return ox && oy;
+        } else {
+            element.offsetBottom = element.offsetTop + element.offsetHeight;
+            element.offsetRight = element.offsetLeft + element.offsetWidth;
+            container.offsetBottom = container.offsetTop + container.offsetHeight;
+            container.offsetRight = container.offsetLeft + container.offsetWidth;
+
+            return !((element.offsetBottom < container.offsetTop) ||
+                (element.offsetTop > container.offsetBottom) ||
+                (element.offsetRight < container.offsetLeft) ||
+                (element.offsetLeft > container.offsetRight));
+        }
+
     }
 
     function enableMoving(element) {
