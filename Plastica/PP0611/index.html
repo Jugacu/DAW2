@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Icey</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    <script src="js/draggable.js"></script>
+</head>
+<body>
+<div id="header">
+    <h1>icey</h1>
+    <nav>
+        <ul>
+            <li>home</li>
+            <li>page 1</li>
+            <li>page 2</li>
+        </ul>
+    </nav>
+</div>
+<div id="cart">
+    <div id="cart-contents">
+        <div class="flex">
+            <div>Product</div>
+            <div>Quantity</div>
+        </div>
+    </div>
+    <div id="total">
+        <h2>
+            TOTAL: <span id="total-price">0</span>€
+        </h2>
+    </div>
+</div>
+<main>
+    <aside>
+        <fieldset>
+            <legend class="system-info-header">Flavour</legend>
+            <label>
+                <input type="checkbox">
+                <span>Vanilla</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Chocolate</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Strawberry</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Cookie Dough</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Peanut Butter Cup</span>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend class="system-info-header">Rating</legend>
+            <div class="star-ratings-sprite" style="position: initial; margin: 10px auto"><span id="range-value" style="width:50%" class="star-ratings-sprite-rating"></span></div>
+            <label>
+                <input id="range" type="range" min="1" max="5">
+                <script>
+                    document.getElementById('range').addEventListener('change', (e) => {
+                        document.getElementById('range-value').style.width = `${(e.target.value * 100 /5)}%`;
+                    })
+                </script>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend class="system-info-header">Name</legend>
+            <input type="text" placeholder="Name">
+        </fieldset>
+        <fieldset>
+            <legend class="system-info-header">Origin city</legend>
+            <label>
+                <input type="checkbox">
+                <span>Logroño</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Berlín</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Madrid</span>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend class="system-info-header">Brand</legend>
+            <label>
+                <input type="checkbox">
+                <span>Brand #1</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Brand #2</span>
+            </label>
+        </fieldset>
+    </aside>
+    <div id="products">
+    </div>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>
