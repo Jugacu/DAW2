@@ -75,7 +75,7 @@ const buildCart = () => {
 
         jugacu.draggable(document.querySelector(`#dragme-${index}`), [
             {
-                container: document.querySelector('main'),
+                container: document.body,
                 condition: () => {
                     removeFromCart(index);
                     return false;
