@@ -225,6 +225,11 @@ aside fieldset label {
     background: #e6e6e6;
     position: relative;
     border-bottom: 5px solid #a9eab7;
+    cursor: pointer;
+}
+
+.product:hover {
+    animation: pulse 1.5s infinite;
 }
 
 .product > .display {
@@ -257,6 +262,18 @@ aside fieldset label {
 @media screen and (max-width: 600px) {
     #header nav ul {
         flex-direction: column;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgb(186, 255, 201);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(186, 255, 201, .4);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgb(186, 255, 201);
     }
 }
 
