@@ -32,30 +32,84 @@
     margin-bottom: 10px;
 }
 
+#menu {
+    margin-top: 10px;
+}
+
 #header h1 {
     color: #2d8a2d;
     margin-bottom: 5px;
 }
 
-#header nav ul {
-    display: flex;
+#menu > ul {
     list-style: none;
+    font-size: 1em;
+    display: flex;
+    margin-bottom: 15px;
     justify-content: center;
+}
+
+#menu > ul > li:not(:last-child) {
+    margin-right: 15px;
+}
+
+#menu > ul > li {
+    cursor: default;
+}
+
+#menu > ul li:hover:not(.active) {
     cursor: pointer;
 }
 
-
-#header nav ul li {
-    border-bottom: 1px solid transparent;
+#menu > ul > li.active {
+    position: relative;
 }
 
-#header nav ul li:hover {
-    border-bottom: 1px solid #1a561a;
+#menu > ul > li.active:after {
+    content: '';
+    border-bottom: 3px solid rgb(255, 255, 255);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
 }
 
-#header nav ul > * + * {
-    margin-left: 10px;
+
+/*Submenu*/
+#menu > ul li {
+    position: relative;
 }
+
+#menu a {
+    text-decoration: none;
+}
+
+#menu > ul li:hover > ul {
+    display: block;
+}
+
+
+#menu > ul > li ul {
+    font-size: .8em;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    list-style: none;
+    background: #baffc9;
+    z-index: 2;
+    padding: 15px;
+    display: none;
+    border-radius: 5px;
+    border-bottom: 5px solid #a9eab7;
+}
+
+#menu > ul > li > ul {
+    top: 18px;
+}
+
+/*end of submenu*/
 
 #cart::after {
     content: '';
@@ -260,9 +314,40 @@ aside fieldset label {
 }
 
 @media screen and (max-width: 600px) {
-    #header nav ul {
+
+    #menu > ul {
         flex-direction: column;
+        align-items: center;
     }
+
+    #menu > ul > li.active {
+        color: rgb(255, 255, 255);
+    }
+
+    #menu > ul > li.active:after {
+        content: none;
+    }
+
+    #menu > ul > li:not(:last-child) {
+        margin-right: 0;
+    }
+
+    #menu > ul li {
+        font-size: 1.2em;
+    }
+
+    /*Submenu*/
+    #menu > ul > li ul {
+        position: initial;
+        background: transparent;
+        text-align: center;
+    }
+
+    #menu > ul li:hover > ul {
+        display: contents;
+    }
+
+    /*end of submenu*/
 }
 
 @keyframes pulse {
