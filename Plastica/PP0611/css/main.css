@@ -5,6 +5,7 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    text-rendering: optimizeLegibility;
 }
 
 .flex {
@@ -16,7 +17,13 @@
     width: 50%;
 }
 
+.flex > * + * {
+    margin-left: 20px;
+}
+
+
 #header {
+    text-transform: uppercase;
     padding: 10px;
     background: #baffc9;
     border-bottom: 5px solid #a9eab7;
@@ -53,17 +60,18 @@
 #cart::after {
     content: '';
     position: absolute;
-    left: -100px;
-    width: 100px;
-    height: 100px;
+    left: -50px;
+    width: 50px;
+    height: 50px;
     top: 0;
-    background-color: #fff8d4;
+    background-color: #ffb458;
     background-image: url("../assets/cart.png");
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: center center;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    border-bottom: 5px solid #e49637;
 }
 
 #cart {
@@ -76,6 +84,7 @@
     background: #ececec;
     width: 300px;
     height: 600px;
+    color: black;
 }
 
 #cart.hover {
@@ -87,7 +96,6 @@
     overflow-x: hidden;
     height: 500px;
     width: 300px;
-    padding: 10px;
 }
 
 #cart-contents .product {
@@ -99,19 +107,43 @@
     background-position: 50% 20%;
 }
 
+#cart-contents > div {
+    padding: 20px;
+}
+
+#cart-contents > *:nth-child(odd) {
+    background: #e4e4e4;
+}
+
 .cart-product {
     display: flex;
+    flex-direction: column;
+}
+
+.cart-product > .desc {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.cart-product > .desc h3 {
+    font-weight: normal;
+}
+
+.cart-product > .desc span {
+    font-weight: 600;
 }
 
 .cart-product > .display {
     margin-right: 10px;
     height: 80px;
-    width: 50px;
+    width: 100%;
     background-color: #0c4e89;
     background-image: url("https://i.imgur.com/gcSjNXi.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 10px;
+
 }
 
 input[type=range] {
@@ -127,12 +159,16 @@ input[type=text] {
     text-align: center;
 }
 
+.input button {
+    width: 20px;
+}
+
 .input {
     display: flex;
     align-items: center;
-    padding: 0 20px;
-
+    flex-grow: 1;
 }
+
 
 .input input {
     text-align: center;
@@ -210,10 +246,12 @@ aside fieldset label {
 
 #total {
     height: 100px;
-    background: #dadada;
+    background: #ffb458;
     padding: 10px;
     display: flex;
     align-items: center;
+    border-bottom: 5px solid #e49637;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 600px) {

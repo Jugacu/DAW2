@@ -52,7 +52,10 @@ const isInCart = (product) => {
 };
 
 const buildCart = () => {
-    cartContents.innerHTML = '';
+    cartContents.innerHTML = `<div class="flex">
+            <div><h3>Product</h3></div>
+            <div><h3>Quantity</h3></div>
+        </div>`;
 
     cartThings.forEach((arr, index) => {
         const quantity = arr[0];
@@ -62,7 +65,7 @@ const buildCart = () => {
         div.innerHTML = `<div class="flex">
             <div id="dragme-${index}" class="cart-product">
                 <div class="display" style="background-image: url('${product._image}')"></div>
-                <div>
+                <div class="desc">
                     <h3>${product._name}</h3>
                     <span class="price">${product._price}€</span>
                 </div>
