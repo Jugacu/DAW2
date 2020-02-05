@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200204184545 extends AbstractMigration
+final class Version20200205200211 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,9 @@ final class Version20200204184545 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mssql', 'Migration can only be executed safely on \'mssql\'.');
 
-        $this->addSql('CREATE TABLE [user] (id INT IDENTITY NOT NULL, name NVARCHAR(20) NOT NULL, password NVARCHAR(255) NOT NULL, PRIMARY KEY (id))');
+        $this->addSql('CREATE TABLE course (id INT IDENTITY NOT NULL, name NVARCHAR(255) NOT NULL, hours INT NOT NULL, description NVARCHAR(255) NOT NULL, PRIMARY KEY (id))');
+        $this->addSql('sp_RENAME \'student.birthdate\', \'birth_date\', \'COLUMN\'');
+        $this->addSql('EXEC sp_RENAME N\'student.uniq_b723af339d86650f\', N\'UNIQ_B723AF33A76ED395\', N\'INDEX\'');
     }
 
     public function down(Schema $schema) : void
@@ -40,6 +42,8 @@ final class Version20200204184545 extends AbstractMigration
 //        $this->addSql('CREATE SCHEMA db_owner');
 //        $this->addSql('CREATE SCHEMA db_securityadmin');
 //        $this->addSql('CREATE SCHEMA dbo');
-        $this->addSql('DROP TABLE [user]');
+        $this->addSql('DROP TABLE course');
+        $this->addSql('sp_RENAME \'student.birth_date\', \'birthDate\', \'COLUMN\'');
+        $this->addSql('EXEC sp_RENAME N\'student.uniq_b723af33a76ed395\', N\'UNIQ_B723AF339D86650F\', N\'INDEX\'');
     }
 }

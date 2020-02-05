@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200204184545 extends AbstractMigration
+final class Version20200205201252 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,9 @@ final class Version20200204184545 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mssql', 'Migration can only be executed safely on \'mssql\'.');
 
-        $this->addSql('CREATE TABLE [user] (id INT IDENTITY NOT NULL, name NVARCHAR(20) NOT NULL, password NVARCHAR(255) NOT NULL, PRIMARY KEY (id))');
+        $this->addSql('CREATE TABLE unit (id INT IDENTITY NOT NULL, course_id INT NOT NULL, number INT NOT NULL, name NVARCHAR(255) NOT NULL, goals VARCHAR(MAX), PRIMARY KEY (id))');
+        $this->addSql('CREATE INDEX IDX_DCBB0C53591CC992 ON unit (course_id)');
+        $this->addSql('ALTER TABLE unit ADD CONSTRAINT FK_DCBB0C53591CC992 FOREIGN KEY (course_id) REFERENCES course (id)');
     }
 
     public function down(Schema $schema) : void
@@ -40,6 +42,6 @@ final class Version20200204184545 extends AbstractMigration
 //        $this->addSql('CREATE SCHEMA db_owner');
 //        $this->addSql('CREATE SCHEMA db_securityadmin');
 //        $this->addSql('CREATE SCHEMA dbo');
-        $this->addSql('DROP TABLE [user]');
+        $this->addSql('DROP TABLE unit');
     }
 }

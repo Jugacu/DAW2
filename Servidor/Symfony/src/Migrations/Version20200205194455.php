@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200204184545 extends AbstractMigration
+final class Version20200205194455 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,9 @@ final class Version20200204184545 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mssql', 'Migration can only be executed safely on \'mssql\'.');
 
-        $this->addSql('CREATE TABLE [user] (id INT IDENTITY NOT NULL, name NVARCHAR(20) NOT NULL, password NVARCHAR(255) NOT NULL, PRIMARY KEY (id))');
+        $this->addSql('CREATE TABLE student (id INT IDENTITY NOT NULL, user_id INT NOT NULL, name NVARCHAR(255) NOT NULL, surname NVARCHAR(255) NOT NULL, address NVARCHAR(255) NOT NULL, city NVARCHAR(30) NOT NULL, province NVARCHAR(18) NOT NULL, birthDate DATE NOT NULL, PRIMARY KEY (id))');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_B723AF339D86650F ON student (user_id) WHERE user_id IS NOT NULL');
+        $this->addSql('ALTER TABLE student ADD CONSTRAINT FK_B723AF339D86650F FOREIGN KEY (user_id) REFERENCES [user] (id)');
     }
 
     public function down(Schema $schema) : void
@@ -40,6 +42,6 @@ final class Version20200204184545 extends AbstractMigration
 //        $this->addSql('CREATE SCHEMA db_owner');
 //        $this->addSql('CREATE SCHEMA db_securityadmin');
 //        $this->addSql('CREATE SCHEMA dbo');
-        $this->addSql('DROP TABLE [user]');
+        $this->addSql('DROP TABLE student');
     }
 }
