@@ -54,6 +54,16 @@ class Student
      */
     private $user;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Enrollment", mappedBy="student", orphanRemoval=true)
+     */
+    private $enrollments;
+
+    public function __construct()
+    {
+        $this->enrollments = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -140,6 +150,37 @@ class Student
     public function setUser(User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Enrollment[]
+     */
+    public function getEnrollments(): Collection
+    {
+        return $this->enrollments;
+    }
+
+    public function addEnrollment(Enrollment $enrollment): self
+    {
+        if (!$this->enrollments->contains($enrollment)) {
+            $this->enrollments[] = $enrollment;
+            $enrollment->setStudent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEnrollment(Enrollment $enrollment): self
+    {
+        if ($this->enrollments->contains($enrollment)) {
+            $this->enrollments->removeElement($enrollment);
+            // set the owning side to null (unless already changed)
+            if ($enrollment->getStudent() === $this) {
+                $enrollment->setStudent(null);
+            }
+        }
 
         return $this;
     }

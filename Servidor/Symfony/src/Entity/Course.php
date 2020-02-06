@@ -38,6 +38,11 @@ class Course
      */
     private $units;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Enrollment", mappedBy="course", orphanRemoval=true)
+     */
+    private $enrollments;
+
     public function __construct()
     {
         $this->units = new ArrayCollection();
@@ -110,6 +115,37 @@ class Course
             // set the owning side to null (unless already changed)
             if ($unit->getCourse() === $this) {
                 $unit->setCourse(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Enrollment[]
+     */
+    public function getEnrollments(): Collection
+    {
+        return $this->enrollments;
+    }
+
+    public function addEnrollment(Enrollment $enrollment): self
+    {
+        if (!$this->enrollments->contains($enrollment)) {
+            $this->enrollments[] = $enrollment;
+            $enrollment->setCourse($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEnrollment(Enrollment $enrollment): self
+    {
+        if ($this->enrollments->contains($enrollment)) {
+            $this->enrollments->removeElement($enrollment);
+            // set the owning side to null (unless already changed)
+            if ($enrollment->getCourse() === $this) {
+                $enrollment->setCourse(null);
             }
         }
 
