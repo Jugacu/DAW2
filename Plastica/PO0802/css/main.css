@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+
+div[class^="col"], .row, .orange {
+    border: 2px solid white;
+}
+
+.green {
+    background: lightgreen;
+}
+
+.blue {
+    background: dodgerblue;
+}
+
+.blue, .grey {
+    height: 120px;
+}
+
+.grey {
+    background: darkgrey
+}
+
+
+.otherBlue {
+    background: deepskyblue;
+}
+
+.orange {
+    background: orangered;
+}
