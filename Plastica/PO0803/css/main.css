@@ -1,0 +1,42 @@
+header {
+    background: orangered;
+}
+.red {
+    background: red;
+}
+
+.blue {
+    background: lightskyblue;
+}
+
+.yellow {
+    background: yellow;
+}
+
+@media (min-width: 576px) {
+    header {
+        background: lightskyblue;
+    }
+
+    .blue {
+        background: red;
+    }
+
+    .green {
+        background: greenyellow;
+    }
+}
+
+@media (min-width: 768px) {
+    header {
+        background: lightgreen;
+    }
+    
+    .green {
+        background: red;
+    }
+
+    .tall {
+        height: 400px;
+    }
+}
