@@ -1,0 +1,80 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#drawArea{
+	display: inline-block;
+}
+
+.colorPicker {
+    border-top-width: thin;
+    border-right-width: thin;
+    border-bottom-width: thin;
+    border-left-width: thin;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    width: auto;
+}
+
+.colorPicker td {
+    width: 10px;
+    height: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.yellow {
+    background-color: #FF0;
+}
+
+.green {
+    background-color: #0F0;
+}
+
+.black {
+    background-color: #000;
+}
+
+.red {
+    background-color: #F00;
+}
+
+.blue {
+    background-color: #06C;
+}
+
+.white {
+    background-color: #FFF;
+}
+
+.default {
+	background: mediumpurple;
+}
+
+#colorPicker td {
+    width: 35px;
+    height: 20px;
+}
+
+#brush {
+    text-align: center;
+}
+
+.selected {
+    border: medium solid #939;
+}
+
+.row {
+	display: flex;
+}
+
+.col {
+	user-select: none;
+	border: 1px solid #1d1d1d;
+	width: 20px;
+	height: 20px;
+}
