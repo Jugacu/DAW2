@@ -18,11 +18,6 @@ class HomeController extends AbstractController
      */
     public function index(Request $request)
     {
-        $user = new User();
-        $user->setName('');
-
-        throw new NotFoundHttpException('No eeeeeeeeeeeee');
-
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
         ]);
