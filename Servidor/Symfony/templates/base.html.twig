@@ -4,8 +4,25 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+        <h1>Cursos diseño web</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ path('home') }}">Inicio</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_login') }}">Login</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_register') }}">Registro</a>
+                </li>
+            </ul>
+        </nav>
+        <hr>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

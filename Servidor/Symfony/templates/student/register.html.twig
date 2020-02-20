@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register new student{% endblock %}
+
+{% block body %}
+    <h2>Register Student</h2>
+
+    {{ form_start(studentForm) }}
+    {{ form_row(studentForm.name) }}
+    {{ form_row(studentForm.address) }}
+    {{ form_row(studentForm.surname) }}
+    {{ form_row(studentForm.city) }}
+    {{ form_row(studentForm.province) }}
+    {{ form_row(studentForm.birthDate) }}
+
+    <button class="btn">Register</button>
+    {{ form_end(studentForm) }}
+{% endblock %}
