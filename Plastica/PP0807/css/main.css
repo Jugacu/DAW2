@@ -154,6 +154,12 @@ body {
     padding-bottom: 10px;
 }
 
+footer {
+    background-image: url(../img/page-000.png);
+    background-size: 500px 500px;
+    min-height: 90px;
+}
+
 body:before {
     background-image: url(../img/page-dark.png);
     background-size: 500px 500px;
