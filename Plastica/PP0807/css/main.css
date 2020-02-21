@@ -160,6 +160,10 @@ footer {
     min-height: 90px;
 }
 
+footer p {
+    margin: 0;
+}
+
 body:before {
     background-image: url(../img/page-dark.png);
     background-size: 500px 500px;
