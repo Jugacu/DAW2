@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5mb :)</title>
+    <link rel="stylesheet" href="css/lib/bootstrap.css">
+    <script src="js/lib/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/lib/bootstrap.js"></script>
+    <script src="js/lib/popper.min.js"></script>
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <meta name="description"
+          content="osu! - Rhythm is just a *click* away!  With Ouendan/EBA, Taiko and original gameplay modes, as well as a fully functional level editor.">
+    <meta name="keywords"
+          content="osu, peppy, ouendan, elite, beat, agents, ds, windows, game, taiko, tatsujin, simulator, sim, xna, ddr, beatmania, osu!, osume">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cards.css">
+</head>
+<body>
+<div class="container nav-container">
+    <nav class="navbar navbar-expand-md pl-0 pr-0 navbar-dark">
+        <img class="navbar-brand" height="50px" src="img/osu-logo-white.svg" alt="osu! logo">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="things.html">things</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="form.html">form</a>
+                </li>
+                <li>
+                    <input class="small-font nav-link no-outline osu-search form-control-plaintext"
+                           type="search" placeholder="search" aria-label="Search">
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">sign in</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<main class="container">
+    <div class="row">
+        <form class="mt-2 mt-sm-5 col-12 col-sm-8">
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3">
+                </div>
+            </div>
+            <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                                   checked>
+                            <label class="form-check-label" for="gridRadios1">
+                                First radio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                            <label class="form-check-label" for="gridRadios2">
+                                Second radio
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
+                                   disabled>
+                            <label class="form-check-label" for="gridRadios3">
+                                Third disabled radio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group row">
+                <div class="col-sm-2">Checkbox</div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck1">
+                            Example checkbox
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10 ml-auto">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </form>
+        <div class="card-flip col mt-2 mt-sm-5">
+            <div class="flip">
+                <div class="front">
+                    <div class="card bg-dark">
+                        <img class="card-img-top" src="img/page-dark.png">
+
+                        <div class="card-body">
+                            <h4 class="card-title">Card Flip</h4>
+                            <p class="card-text">Flippi el delfín</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid dignissimos ea enim quaerat
+                    reiciendis, repellat sequi sint vero voluptates. Autem blanditiis consectetur est illum impedit
+                    laboriosam laudantium nemo non, nulla quaerat repudiandae sit sunt tempora! Cum dignissimos harum hic id
+                    iste itaque, nobis obcaecati officiis sapiente sint soluta ullam?
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="container-fluid text-center mt-2 d-flex align-items-center justify-content-center">
+    <p>
+        Julián Sánchez
+    </p>
+</footer>
+</body>
+</html>
