@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <style>
+        main {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Comprobar disponibilidad</h1>
+    <label>
+        Nombre de usuario
+        <input type="text">
+    </label> <br> <br>
+    <a id="check" href="#">Comprobar disponibilidad</a>
+    <p id="response"></p>
+</main>
+<script>
+    const response = document.querySelector('#response');
+    const input = document.querySelector('input');
+
+    const res = (e) => {
+        const bool = e.target.responseText === 'yes';
+        response.innerHTML = `El nombre elegido [${input.value}] ${bool ? '': '<strong>no</strong>'} está disponible.`
+    };
+
+
+    const check = document.querySelector('#check');
+    check.addEventListener('click', () => {
+        const XHR = new XMLHttpRequest();
+        XHR.onload = res;
+        XHR.open('GET', 'server.php', true);
+        XHR.send();
+    });
+
+</script>
+</body>
+</html>

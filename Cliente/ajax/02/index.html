@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        main {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <table id="products">
+        <tr>
+            <th>title</th>
+            <th>artist</th>
+            <th>country</th>
+            <th>company</th>
+            <th>price</th>
+            <th>year</th>
+        </tr>
+    </table>
+</main>
+<script>
+    const products = document.querySelector('#products');
+
+    const res = (e) => {
+        const xml = e.target.responseXML;
+        const cds = xml.querySelectorAll('CD');
+
+        for (let i = 0; i < cds.length; i++) {
+            const cd = cds[i];
+
+            const row = products.insertRow(-1);
+
+            row.insertCell(-1).innerHTML = cd.querySelector('TITLE').innerHTML;
+            row.insertCell(-1).innerHTML = cd.querySelector('ARTIST').innerHTML;
+            row.insertCell(-1).innerHTML = cd.querySelector('COUNTRY').innerHTML;
+            row.insertCell(-1).innerHTML = cd.querySelector('COMPANY').innerHTML;
+            row.insertCell(-1).innerHTML = cd.querySelector('PRICE').innerHTML;
+            row.insertCell(-1).innerHTML = cd.querySelector('YEAR').innerHTML;
+        }
+
+    };
+
+    const XHR = new XMLHttpRequest();
+    XHR.onload = res;
+    XHR.open('GET', 'server.php', true);
+    XHR.send();
+</script>
+</body>
+</html>
