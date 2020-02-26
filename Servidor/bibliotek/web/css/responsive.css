@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+.title {
+    text-align: center;
+    margin: 10px 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+}
+
+nav > ul > li:not(:last-child) {
+    margin-right: 10px;
+}
+
+#content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.summary {
+    color: rgba(0, 0, 0, .8);
+    margin-bottom: 10px;
+}
