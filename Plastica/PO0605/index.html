@@ -18,6 +18,32 @@
 <body>
 <canvas id="canvas" height="300" width="600"></canvas>
 <script>
+    function polygon(X, Y, R, side, id) {
+        let c = document.getElementById(id);
+        let ctx = c.getContext("2d");
+        ctx.globalCompositeOperation = "xor";
+        let x;
+        let y;
+        let rad = (Math.PI / 180) * (360 / side);
+        for (let i = 0; i < side; i++) {
+            ctx.beginPath();
+
+            x = X + R * Math.cos(rad * i);
+            y = Y + R * Math.sin(rad * i);
+            ctx.arc(x, y, R, 0, Math.PI * 2);
+
+            if (i % 2 === 0) {
+                ctx.fillStyle = "blue";
+            } else {
+                ctx.fillStyle = "red";
+            }
+
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+    
+
     const canvas = document.querySelector('#canvas');
     const ctx = canvas.getContext('2d');
 
@@ -45,7 +71,6 @@
 
         ctx.fill();
     }
-
 
 </script>
 </body>
