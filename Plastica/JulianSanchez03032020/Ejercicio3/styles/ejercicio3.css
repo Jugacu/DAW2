@@ -24,7 +24,8 @@ body {
 }
 
 img {
-    object-fit: contain;
+    background: #333333;
+    object-fit: none;
     width: 100%;
 }
 
