@@ -1,0 +1,241 @@
+/*
+    @author Julián Sánchez
+    @version Examen 3 de marzo 2020
+ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.row1 {
+    background: #333333;
+    padding: 20px 0;
+}
+
+#slider {
+    margin-bottom: 30px;
+}
+
+img {
+    object-fit: contain;
+    width: 100%;
+}
+
+#header {
+    color: #b5b1ad;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hGroup h1 {
+    font-weight: 400;
+    font-size: 1.3em;
+}
+
+#hGroup h2 {
+    display: none;
+}
+
+
+#header a {
+    color: #b5b1ad;
+    text-decoration: none;
+}
+
+#services {
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+#services > article figure {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#services > article strong {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+#services > article:not(:last-child) {
+    padding-right: 20px;
+}
+
+#services > article p {
+    color: rgba(0, 0, 0, .6);
+    margin-bottom: 10px;
+    font-size: .9em;
+}
+
+#services > article p.more {
+    text-align: right;
+}
+
+#services > article p.more a {
+    color: #daa056;
+}
+
+#latest {
+    margin-bottom: 40px;
+}
+
+#latest article figure ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#latest article figure figcaption {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#latest article figure figcaption a {
+    color: #daa056;
+}
+
+.row3 {
+    background: #232323;
+    padding: 20px;
+}
+
+.row1 {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+
+footer a, .row3 {
+    color: rgb(181, 177, 173);
+}
+
+#header {
+    padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    #header nav > ul {
+        display: none;
+    }
+
+    #header nav:hover ul {
+        display: block;
+        position: absolute;
+        bottom: 100%;
+        width: 100%;
+        list-style: none;
+        left: 0;
+        background: #333333;
+    }
+
+    #header nav:hover ul li {
+        padding: 10px 20px;
+    }
+
+    #header nav:hover ul li ul{
+        position: initial;
+    }
+
+    #header nav::before {
+        content: 'MENU';
+    }
+
+    footer {
+        margin-bottom: 100px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #header {
+        padding: 0;
+    }
+
+    #hGroup h1 {
+        font-weight: 400;
+        font-size: 1.8em;
+    }
+
+    #hGroup h2 {
+        font-size: .8em;
+        color: #b5b1ad;
+        display: block;
+    }
+
+    .row1 {
+        position: initial;
+        margin-bottom: 30px;
+    }
+
+    #latest article figure ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #header, .row2, footer {
+        max-width: 1200px;
+    }
+
+    #header nav::before {
+        display: none;
+    }
+
+    #header nav > ul {
+        display: initial;
+    }
+
+    #services {
+        flex-direction: row;
+    }
+
+    .row2, footer {
+        margin: 0 auto;
+    }
+
+    #header nav > ul {
+        list-style: none;
+        display: flex;
+    }
+
+    #header nav > ul > li {
+        background: #232323;
+        padding: 10px 20px;
+    }
+
+    #header nav > ul li ul {
+        position: absolute;
+        list-style: none;
+        display: none;
+    }
+
+    #header nav > ul > li ul li {
+        padding: 10px 20px;
+        background: #232323;
+    }
+
+    #header nav > ul > li ul li:hover {
+        background: #696969;
+    }
+
+    #header nav ul li:hover > ul {
+        display: block;
+    }
+
+    #latest article figure ul li {
+        border: 1px solid #c5c5c5;
+        padding: 5px;
+    }
+
+
+}

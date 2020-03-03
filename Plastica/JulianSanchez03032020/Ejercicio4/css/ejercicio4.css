@@ -1,0 +1,65 @@
+/*
+@author Julián Sánchez
+@version Examen 3 de marzo 2020
+ */
+
+#hWrapper {
+    background: #333333;
+}
+
+a {
+    color: #b5b1ad !important;
+    text-decoration: none !important;
+}
+
+img {
+    object-fit: contain;
+}
+
+.blackWrapper {
+    background: #333333;
+}
+
+#hgroup h1 {
+    font-weight: 400;
+    font-size: 1.8em;
+}
+
+#hgroup h2 {
+    font-size: .8em;
+    color: #b5b1ad;
+}
+
+.linkColored {
+    color: #b5b1ad;
+}
+
+
+.more a, .colored {
+    color: #daa056 !important;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 960px !important;
+    }
+
+    .nav-item {
+        background: #232323;
+    }
+
+    .fixed-md-none {
+        position: initial;
+    }
+}
+
+@media (max-width: 768px) {
+    #hgroup h1 {
+        font-weight: 400;
+        font-size: 1.4em;
+    }
+
+    #hgroup h2 {
+        display: none;
+    }
+}

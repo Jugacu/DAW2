@@ -1,0 +1,72 @@
+/*
+@author Julián Sánchez
+@version Examen 3 de marzo 2020
+ */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+.card {
+    height: 90px;
+    width: 64px;
+    border: 1px solid black;
+    display: inline-block;
+    position: relative;
+    user-select: none;
+}
+
+.black-card {
+    background: black;
+}
+
+.container > .card {
+    border: none;
+}
+
+#wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.center {
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+}
+
+.bottom {
+    top: 200px;
+}
+
+.rot-0 {
+    transform: translateY(60px);
+}
+
+.rot-1 {
+    transform: rotate(10deg) translate(-10px, 55px);
+}
+
+.rot-2 {
+    transform: rotate(20deg) translate(-34px, 40px);
+}
+
+.rot-3 {
+    transform: rotate(30deg) translate(-60px, 20px);
+}
+
+.rot-c-1 {
+    transform: rotate(-10deg) translate(10px, 55px);;
+}
+
+.rot-c-2 {
+    transform: rotate(-20deg) translate(34px, 40px);
+}
+
+.rot-c-3 {
+    transform: rotate(-30deg) translate(60px, 20px);
+}
